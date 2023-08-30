@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  db:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_DATABASE=db
+    ports:
+      - 5432:5432

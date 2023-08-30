@@ -1,0 +1,15 @@
+version: v1
+
+plugins:
+  - name: es
+    opt: target=ts
+    out: src/gen/connect
+  - name: connect-es
+    opt: target=ts
+    out: src/gen/connect
+  - name: abstractions
+    opt: target=ts
+    out: src/gen/abstractions
+  - name: interfaces
+    opt: target=ts
+    out: src/gen/interfaces

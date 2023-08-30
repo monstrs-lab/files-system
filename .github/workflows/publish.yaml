@@ -1,0 +1,10 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    uses: monstrs-lab/shared/.github/workflows/publish.yaml@master
+    secrets:
+      npmAuthToken: ${{ secrets.NPM_AUTH_TOKEN }}

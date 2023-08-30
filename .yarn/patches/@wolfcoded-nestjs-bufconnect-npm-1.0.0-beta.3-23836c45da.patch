@@ -1,0 +1,36 @@
+diff --git a/index.js b/index.js
+index bd6701caac9f0fa2fc6e7453976d9ecb66dc083b..4181285352c76c0d0a1c7751f1cbeba563a17e2f 100644
+--- a/index.js
++++ b/index.js
+@@ -1,6 +1,6 @@
+ import { MessagePattern, Server } from '@nestjs/microservices';
+ import { Observable, lastValueFrom } from 'rxjs';
+-import { isString } from '@nestjs/common/utils/shared.utils';
++import { isString } from '@nestjs/common/utils/shared.utils.js';
+ import * as http from 'node:http';
+ import * as https from 'node:https';
+ import * as http2 from 'node:http2';
+@@ -561,6 +561,9 @@ class ServerBufConnect extends Server {
+             const router = this.buildRouter();
+             this.server = new HTTPServer(this.Options, router);
+             await this.server.listen();
++            if (callback) {
++                callback()
++            }
+         }
+         catch (error) {
+             callback(error);
+diff --git a/package.json b/package.json
+index d92510844ef2aa10dbef06528bed7b5b0a2129c2..d6727d348a9b38d6ad9583999567ac3fb628dbae 100644
+--- a/package.json
++++ b/package.json
+@@ -6,7 +6,8 @@
+   "publishConfig": {
+     "access": "public"
+   },
+-  "main": "index.cjs",
++  "type": "module",
++  "main": "index.js",
+   "module": "index.js",
+   "types": "index.d.ts",
+   "dependencies": {

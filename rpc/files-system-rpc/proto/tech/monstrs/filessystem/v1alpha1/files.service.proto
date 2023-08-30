@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package tech.monstrs.filessystem.v1alpha1;
+
+import "tech/monstrs/queries/v1alpha1/queries.proto";
+
+service FilesService {
+  rpc CreateUpload(CreateUploadRequest) returns (CreateUploadResponse) {}
+  rpc ConfirmUpload(ConfirmUploadRequest) returns (ConfirmUploadResponse) {}
+  rpc ListFiles(ListFilesRequest) returns (ListFilesResponse) {}
+}
+
+message File {
+  string id = 1;
+  string url = 2;
+}
+
+message Upload {
+  string id = 1;
+  string url = 2;
+}
+
+message ListFilesResponse {
+  repeated File files = 1;
+  bool has_next_page = 2;
+}
+
+message CreateUploadRequest {
+  string owner_id = 1;
+  string bucket = 2;
+  string name = 3;
+  int32 size = 4;
+}
+
+message CreateUploadResponse {
+  Upload result = 1;
+}
+
+message ConfirmUploadRequest {
+  string id = 1;
+  string owner_id = 2;
+}
+
+message ConfirmUploadResponse {
+  Upload result = 1;
+}
+
+message ListFilesRequest {
+  message FilesQuery {
+    tech.monstrs.queries.v1alpha1.Query.ID id = 1;
+  }
+
+  tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+  tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+  FilesQuery query = 3;
+}

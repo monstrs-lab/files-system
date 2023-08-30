@@ -1,0 +1,11 @@
+name: Version
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  version:
+    uses: monstrs-lab/shared/.github/workflows/version.yaml@master

@@ -1,0 +1,10 @@
+version: v1
+
+deps:
+  - buf.build/monstrs/queries
+
+lint:
+  use:
+    - DEFAULT
+  except:
+    - FILE_LOWER_SNAKE_CASE

@@ -1,0 +1,7 @@
+name: Checks
+
+on: [pull_request]
+
+jobs:
+  checks:
+    uses: monstrs-lab/shared/.github/workflows/checks.yaml@master
