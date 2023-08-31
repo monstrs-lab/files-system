@@ -26,15 +26,17 @@ export class Upload extends AggregateRoot {
 
   #ownerId!: string
 
-  #url!: string
-
-  #name!: string
+  #bucket!: FilesBucket
 
   #filename!: string
 
-  #bucket!: FilesBucket
+  #contentType!: string
+
+  #name!: string
 
   #size!: number
+
+  #url!: string
 
   #confirmed: boolean = false
 
@@ -54,20 +56,12 @@ export class Upload extends AggregateRoot {
     this.#ownerId = ownerId
   }
 
-  get url(): string {
-    return this.#url
+  get bucket(): FilesBucket {
+    return this.#bucket
   }
 
-  private set url(url: string) {
-    this.#url = url
-  }
-
-  get name(): string {
-    return this.#name
-  }
-
-  private set name(name: string) {
-    this.#name = name
+  private set bucket(bucket: FilesBucket) {
+    this.#bucket = bucket
   }
 
   get filename(): string {
@@ -78,12 +72,20 @@ export class Upload extends AggregateRoot {
     this.#filename = filename
   }
 
-  get bucket(): FilesBucket {
-    return this.#bucket
+  get contentType(): string {
+    return this.#contentType
   }
 
-  private set bucket(bucket: FilesBucket) {
-    this.#bucket = bucket
+  private set contentType(contentType: string) {
+    this.#contentType = contentType
+  }
+
+  get name(): string {
+    return this.#name
+  }
+
+  private set name(name: string) {
+    this.#name = name
   }
 
   get size(): number {
@@ -92,6 +94,14 @@ export class Upload extends AggregateRoot {
 
   private set size(size: number) {
     this.#size = size
+  }
+
+  get url(): string {
+    return this.#url
+  }
+
+  private set url(url: string) {
+    this.#url = url
   }
 
   get confirmed(): boolean {
@@ -126,7 +136,7 @@ export class Upload extends AggregateRoot {
 
     const filename = format({ name: id, ext: extname(name) })
 
-    this.apply(new UploadCreatedEvent(id, ownerId, bucket, filename, name, size))
+    this.apply(new UploadCreatedEvent(id, ownerId, bucket, filename, contentType, name, size))
 
     return this
   }
@@ -168,6 +178,7 @@ export class Upload extends AggregateRoot {
     this.ownerId = event.ownerId
     this.bucket = event.bucket
     this.filename = event.filename
+    this.contentType = event.contentType
     this.name = event.name
     this.size = event.size
   }

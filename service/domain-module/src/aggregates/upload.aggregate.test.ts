@@ -30,7 +30,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('unknown'),
@@ -48,7 +48,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('xls'),
@@ -66,7 +66,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('png'),
@@ -86,7 +86,7 @@ describe('files-system', () => {
               faker.word.sample(),
               faker.word.sample(),
               faker.system.directoryPath(),
-              faker.internet.domainName(),
+
               FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
             )
 
@@ -128,7 +128,7 @@ describe('files-system', () => {
                 faker.word.sample(),
                 faker.word.sample(),
                 faker.system.directoryPath(),
-                faker.internet.domainName(),
+
                 FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
               ),
               faker.system.commonFileName('png'),
@@ -172,7 +172,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('png'),
@@ -195,7 +195,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('png'),
@@ -231,7 +231,7 @@ describe('files-system', () => {
                   faker.word.sample(),
                   faker.word.sample(),
                   faker.system.directoryPath(),
-                  faker.internet.domainName(),
+
                   FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
                 ),
                 faker.system.commonFileName('png'),

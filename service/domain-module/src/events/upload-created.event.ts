@@ -6,6 +6,7 @@ export class UploadCreatedEvent {
     public readonly ownerId: string,
     public readonly bucket: FilesBucket,
     public readonly filename: string,
+    public readonly contentType: string,
     public readonly name: string,
     public readonly size: number
   ) {}
