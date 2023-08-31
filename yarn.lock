@@ -684,7 +684,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@files-system/domain-module@workspace:service/domain-module":
+"@files-system/application-module@workspace:service/application-module":
+  version: 0.0.0-use.local
+  resolution: "@files-system/application-module@workspace:service/application-module"
+  dependencies:
+    "@files-system/domain-module": "workspace:0.0.1"
+    "@monstrs/logger": "npm:^0.0.17"
+    "@nestjs/common": "npm:^10.2.2"
+    "@nestjs/core": "npm:^10.2.2"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/testing": "npm:^10.2.2"
+    "@types/node": "npm:^20.5.7"
+    "@types/uuid": "npm:^9.0.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    uuid: "npm:^9.0.0"
+  peerDependencies:
+    "@files-system/domain-module": "workspace:0.0.1"
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@files-system/domain-module@workspace:0.0.1, @files-system/domain-module@workspace:service/domain-module":
   version: 0.0.0-use.local
   resolution: "@files-system/domain-module@workspace:service/domain-module"
   dependencies:
@@ -1243,6 +1268,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/logger@npm:^0.0.17":
+  version: 0.0.17
+  resolution: "@monstrs/logger@npm:0.0.17"
+  dependencies:
+    "@opentelemetry/api": "npm:*"
+    "@opentelemetry/api-logs": "npm:^0.41.0"
+    "@opentelemetry/core": "npm:*"
+    "@opentelemetry/sdk-logs": "npm:^0.41.0"
+    on-exit-leak-free: "npm:^2.1.0"
+    sonic-boom: "npm:^3.3.0"
+  checksum: c570924728f2376ebc5dd29bfa311f1b8a4ea64f80d4893f80471f7d3a112d78148921bdf202f1a7598ebecb98939ff3c3b8a87ae75092c82bb05a652e5f9ccd
+  languageName: node
+  linkType: hard
+
 "@monstrs/nestjs-logger@npm:^0.4.1":
   version: 0.4.1
   resolution: "@monstrs/nestjs-logger@npm:0.4.1"
@@ -1337,7 +1376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^10.2.3":
+"@nestjs/common@npm:^10.2.2, @nestjs/common@npm:^10.2.3":
   version: 10.2.3
   resolution: "@nestjs/common@npm:10.2.3"
   dependencies:
@@ -1358,7 +1397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^10.2.3":
+"@nestjs/core@npm:^10.2.2, @nestjs/core@npm:^10.2.3":
   version: 10.2.3
   resolution: "@nestjs/core@npm:10.2.3"
   dependencies:
@@ -1473,7 +1512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:^10.2.3":
+"@nestjs/testing@npm:^10.2.2, @nestjs/testing@npm:^10.2.3":
   version: 10.2.3
   resolution: "@nestjs/testing@npm:10.2.3"
   dependencies:
@@ -1579,6 +1618,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@opentelemetry/api-logs@npm:^0.41.0":
+  version: 0.41.2
+  resolution: "@opentelemetry/api-logs@npm:0.41.2"
+  dependencies:
+    "@opentelemetry/api": "npm:^1.0.0"
+  checksum: 582f9ad3f55f5a8167c70f6388ef857727dea2c4b1b287ab803586832cb2e5717b7ea05d54118a05203de80dc79550710edbebc59bfda4e5b5901dbf8f9daaaf
+  languageName: node
+  linkType: hard
+
 "@opentelemetry/api@npm:*, @opentelemetry/api@npm:^1.0.0":
   version: 1.4.1
   resolution: "@opentelemetry/api@npm:1.4.1"
@@ -1597,7 +1645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/resources@npm:^1.11.0":
+"@opentelemetry/resources@npm:1.15.2, @opentelemetry/resources@npm:^1.11.0":
   version: 1.15.2
   resolution: "@opentelemetry/resources@npm:1.15.2"
   dependencies:
@@ -1619,6 +1667,19 @@ __metadata:
     "@opentelemetry/api": ">=1.4.0 <1.5.0"
     "@opentelemetry/api-logs": ">=0.37.0"
   checksum: 6759f9bed712c1ad3227e943bcdb02b3138809fedee95f447fa5410b9317306dc937a83a1f169e47e399ee0321bee2740a28a6f790c9b7f7160cf6c2f25185cb
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/sdk-logs@npm:^0.41.0":
+  version: 0.41.2
+  resolution: "@opentelemetry/sdk-logs@npm:0.41.2"
+  dependencies:
+    "@opentelemetry/core": "npm:1.15.2"
+    "@opentelemetry/resources": "npm:1.15.2"
+  peerDependencies:
+    "@opentelemetry/api": ">=1.4.0 <1.5.0"
+    "@opentelemetry/api-logs": ">=0.39.1"
+  checksum: aeb1aa2b7f848b5ac237cd195be064a281118cfedc995157df833fd1b0f2da94315b5d3a45a3f1fdcb75bbe2f032c42bdf144a52fd340f61b0a8a70ab4a97794
   languageName: node
   linkType: hard
 
@@ -2115,7 +2176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:^9.0.3":
+"@types/uuid@npm:^9.0.2, @types/uuid@npm:^9.0.3":
   version: 9.0.3
   resolution: "@types/uuid@npm:9.0.3"
   checksum: a2d8a769952f5795c74d594b5fdbdc09972f6fb5e389a52854f5adc27aab85109dea38c09419c2283b14be78271b55eaac7b2300f59d8c058b5ed298a6844768
