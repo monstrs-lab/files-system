@@ -17,14 +17,14 @@
     "buf:update": "buf mod update proto"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "^1.3.0"
+    "@bufbuild/protobuf": "^1.3.1"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.26.1",
     "@bufbuild/connect": "^0.13.0",
     "@bufbuild/connect-node": "^0.13.0",
     "@bufbuild/protoc-gen-connect-es": "^0.13.0",
-    "@bufbuild/protoc-gen-es": "^1.3.0",
+    "@bufbuild/protoc-gen-es": "^1.3.1",
     "@monstrs/protoc-gen-abstractions": "^0.0.4",
     "@monstrs/protoc-gen-interfaces": "^0.0.3"
   }
