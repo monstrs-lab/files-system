@@ -1,0 +1,45 @@
+diff --git a/package.json b/package.json
+index fee694654286713823924780ca4bdb66d212b1f9..905dc3e6cb496b2d57d3c3d1030ed05df8ed230f 100644
+--- a/package.json
++++ b/package.json
+@@ -17,33 +17,34 @@
+     "build:esm+types": "tsc --project tsconfig.json --module ES2015 --verbatimModuleSyntax --outDir ./dist/esm --declaration --declarationDir ./dist/types && echo >./dist/esm/package.json '{\"type\":\"module\", \"sideEffects\":false}'",
+     "jasmine": "jasmine --config=jasmine.json"
+   },
+-  "main": "./dist/cjs/index.js",
++  "type": "module",
++  "main": "./dist/esm/index.js",
+   "types": "./dist/types/index.d.ts",
+   "exports": {
+     ".": {
+       "types": "./dist/types/index.d.ts",
+       "import": "./dist/esm/index.js",
+-      "require": "./dist/cjs/index.js"
++      "require": "./dist/esm/index.js"
+     },
+     "./protocol": {
+       "types": "./dist/types/protocol/index.d.ts",
+       "import": "./dist/esm/protocol/index.js",
+-      "require": "./dist/cjs/protocol/index.js"
++      "require": "./dist/esm/protocol/index.js"
+     },
+     "./protocol-connect": {
+       "types": "./dist/types/protocol-connect/index.d.ts",
+       "import": "./dist/esm/protocol-connect/index.js",
+-      "require": "./dist/cjs/protocol-connect/index.js"
++      "require": "./dist/esm/protocol-connect/index.js"
+     },
+     "./protocol-grpc": {
+       "types": "./dist/types/protocol-grpc/index.d.ts",
+       "import": "./dist/esm/protocol-grpc/index.js",
+-      "require": "./dist/cjs/protocol-grpc/index.js"
++      "require": "./dist/esm/protocol-grpc/index.js"
+     },
+     "./protocol-grpc-web": {
+       "types": "./dist/types/protocol-grpc-web/index.d.ts",
+       "import": "./dist/esm/protocol-grpc-web/index.js",
+-      "require": "./dist/cjs/protocol-grpc-web/index.js"
++      "require": "./dist/esm/protocol-grpc-web/index.js"
+     }
+   },
+   "typesVersions": {

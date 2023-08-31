@@ -1,0 +1,17 @@
+name: Tools
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Tools yarn version'
+        type: string
+        required: true
+
+jobs:
+  publish:
+    uses: monstrs-lab/shared/.github/workflows/tools.yaml@master
+    with:
+      version: ${{ inputs.version }}
+    secrets:
+      patToken: ${{ secrets.PAT_TOKEN }}

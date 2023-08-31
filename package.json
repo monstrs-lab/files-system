@@ -1,0 +1,32 @@
+{
+  "name": "files-system",
+  "private": true,
+  "workspaces": [
+    "entrypoints/*",
+    "service/*",
+    "rpc/*"
+  ],
+  "resolutions": {
+    "@bufbuild/connect": "0.8.6",
+    "@bufbuild/connect-node": "0.8.6",
+    "@bufbuild/connect-node@npm:0.8.6": "patch:@bufbuild/connect-node@npm%3A0.13.0#~/.yarn/patches/@bufbuild-connect-node-npm-0.13.0-3401b8a019.patch",
+    "@bufbuild/connect@npm:0.8.6": "patch:@bufbuild/connect@npm%3A0.13.0#~/.yarn/patches/@bufbuild-connect-npm-0.13.0-be350d96c9.patch",
+    "@wolfcoded/nestjs-bufconnect": "patch:@wolfcoded/nestjs-bufconnect@npm%3A1.0.0-beta.3#~/.yarn/patches/@wolfcoded-nestjs-bufconnect-npm-1.0.0-beta.3-23836c45da.patch",
+    "pg": "8.10.0",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@monstrs/tools-runtime": "^0.2.15",
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "yarn@3.6.1",
+  "tools": {
+    "schematic": {
+      "collection": "@monstrs/schematics",
+      "schematic": "project",
+      "type": "libraries",
+      "migration": "1643131477515"
+    }
+  }
+}
