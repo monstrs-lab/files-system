@@ -1,12 +1,12 @@
-import { Guard }                       from '@monstrs/guard-clause'
-import { Against }                     from '@monstrs/guard-clause'
+import { Guard }                     from '@monstrs/guard-clause'
+import { Against }                   from '@monstrs/guard-clause'
 
-import { FilesBucketLengthConditions } from './files-bucket-length-conditions.value-object.js'
+import { FilesBucketSizeConditions } from './files-bucket-size-conditions.value-object.js'
 
 export class FilesBucketConditions {
   #type!: string
 
-  #length!: FilesBucketLengthConditions
+  #size!: FilesBucketSizeConditions
 
   get type(): string {
     return this.#type
@@ -16,23 +16,23 @@ export class FilesBucketConditions {
     this.#type = type
   }
 
-  get length(): FilesBucketLengthConditions {
-    return this.#length
+  get size(): FilesBucketSizeConditions {
+    return this.#size
   }
 
-  private set length(length: FilesBucketLengthConditions) {
-    this.#length = length
+  private set size(size: FilesBucketSizeConditions) {
+    this.#size = size
   }
 
   @Guard()
   static create(
     @Against('type').Empty() type: string,
-    @Against('length').NotInstance(FilesBucketLengthConditions) length: FilesBucketLengthConditions
+    @Against('size').NotInstance(FilesBucketSizeConditions) size: FilesBucketSizeConditions
   ): FilesBucketConditions {
     const filesBucketConditions = new FilesBucketConditions()
 
     filesBucketConditions.type = type
-    filesBucketConditions.length = length
+    filesBucketConditions.size = size
 
     return filesBucketConditions
   }

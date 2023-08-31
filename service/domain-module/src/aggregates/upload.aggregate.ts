@@ -1,14 +1,7 @@
 /// <reference path="../types/mime-match.d.ts" />
 
-import type { FilesBucket }            from '../value-objects/index.js'
-import type { FilesStorageAdapter }    from '../ports/index.js'
-import type { FilesBucketsAdapter }    from '../ports/index.js'
-
-import { extname }                     from 'node:path'
 import { format }                      from 'node:path'
-import { join }                        from 'node:path'
-import { relative }                    from 'node:path'
-import { format as formatUrl }         from 'node:url'
+import { extname }                     from 'node:path'
 
 import { AggregateRoot }               from '@nestjs/cqrs'
 import { Guard }                       from '@monstrs/guard-clause'
@@ -16,16 +9,16 @@ import { Against }                     from '@monstrs/guard-clause'
 import match                           from 'mime-match'
 import mime                            from 'mime-types'
 
+import { FilesBucket }                 from '../value-objects/index.js'
 import { UploadConfirmedEvent }        from '../events/index.js'
+import { UploadPreparedEvent }         from '../events/index.js'
 import { UploadCreatedEvent }          from '../events/index.js'
-import { UknownFileBucketError }       from '../errors/index.js'
 import { UknownFileTypeError }         from '../errors/index.js'
 import { InvalidContentTypeError }     from '../errors/index.js'
-import { InvalidContentLengthError }   from '../errors/index.js'
-import { UploadNotFoundError }         from '../errors/index.js'
+import { InvalidContentSizeError }     from '../errors/index.js'
+import { UploadNotReadyError }         from '../errors/index.js'
 import { UploadAlreadyConfirmedError } from '../errors/index.js'
 import { UploadInitiatorDoesNotMatch } from '../errors/index.js'
-import { FileNotFoundError }           from '../errors/index.js'
 import { File }                        from './file.aggregate.js'
 
 export class Upload extends AggregateRoot {
@@ -44,13 +37,6 @@ export class Upload extends AggregateRoot {
   #size!: number
 
   #confirmed: boolean = false
-
-  constructor(
-    private readonly buckets: FilesBucketsAdapter,
-    private readonly storage: FilesStorageAdapter
-  ) {
-    super()
-  }
 
   get id(): string {
     return this.#id
@@ -117,19 +103,13 @@ export class Upload extends AggregateRoot {
   }
 
   @Guard()
-  async create(
+  create(
     @Against('id').NotUUID(4) id: string,
     @Against('ownerId').NotUUID(4) ownerId: string,
-    @Against('bucketName').Empty() bucketName: string,
+    @Against('bucket').NotInstance(FilesBucket) bucket: FilesBucket,
     @Against('name').Empty() name: string,
     @Against('size').NotNumberBetween(0, Infinity) size: number
-  ): Promise<Upload> {
-    const bucket = this.buckets.get(bucketName)
-
-    if (!bucket) {
-      throw new UknownFileBucketError()
-    }
-
+  ): Upload {
     const contentType = mime.lookup(name)
 
     if (!contentType) {
@@ -140,71 +120,45 @@ export class Upload extends AggregateRoot {
       throw new InvalidContentTypeError(contentType, bucket.conditions.type)
     }
 
-    if (!(size > bucket.conditions.length.min && size < bucket.conditions.length.max)) {
-      throw new InvalidContentLengthError(size, bucket.conditions.length)
+    if (!(size > bucket.conditions.size.min && size < bucket.conditions.size.max)) {
+      throw new InvalidContentSizeError(size, bucket.conditions.size)
     }
 
-    const filename = format({
-      name: bucket.path.startsWith('/')
-        ? relative('/', join(bucket.path, id))
-        : join(bucket.path, id),
-      ext: extname(name),
-    })
+    const filename = format({ name: id, ext: extname(name) })
 
-    const url = await this.storage.generateUploadUrl(bucket.bucket, filename, contentType, size)
-
-    this.apply(new UploadCreatedEvent(id, ownerId, url, name, filename, bucket, size))
+    this.apply(new UploadCreatedEvent(id, ownerId, bucket, filename, name, size))
 
     return this
   }
 
   @Guard()
-  async confirm(@Against('ownerId').NotUUID(4) ownerId: string): Promise<File> {
-    if (!this.url) {
-      throw new UploadNotFoundError()
-    }
-
+  prepare(@Against('url').Empty() url: string): Upload {
     if (this.confirmed) {
       throw new UploadAlreadyConfirmedError()
+    }
+
+    this.apply(new UploadPreparedEvent(this.id, url))
+
+    return this
+  }
+
+  @Guard()
+  confirm(@Against('ownerId').NotUUID(4) ownerId: string): File {
+    if (this.confirmed) {
+      throw new UploadAlreadyConfirmedError()
+    }
+
+    if (!this.url) {
+      throw new UploadNotReadyError()
     }
 
     if (this.ownerId !== ownerId) {
       throw new UploadInitiatorDoesNotMatch()
     }
 
-    const metadata = await this.storage.getMetadata(this.bucket.bucket, this.filename)
-
-    if (!metadata) {
-      throw new FileNotFoundError()
-    }
-
-    const signedReadUrl = await this.storage.generateReadUrl(
-      this.bucket.bucket,
-      this.filename,
-      this.bucket.hostname
-    )
-
-    const parsedUrl = new URL(signedReadUrl)
-
-    parsedUrl.search = ''
-
-    const url = formatUrl(parsedUrl)
-
     this.apply(new UploadConfirmedEvent(this.id))
 
-    const file = await File.create(
-      this.id,
-      this.ownerId,
-      this.bucket.type,
-      url,
-      metadata.bucket,
-      metadata.name,
-      metadata.size || this.size,
-      metadata.contentType,
-      metadata.contentEncoding,
-      metadata.contentLanguage,
-      metadata.metadata
-    )
+    const file = File.create(this.id, this.ownerId, this.bucket.type, this.url)
 
     return file
   }
@@ -212,11 +166,14 @@ export class Upload extends AggregateRoot {
   protected onUploadCreatedEvent(event: UploadCreatedEvent): void {
     this.id = event.uploadId
     this.ownerId = event.ownerId
-    this.url = event.url
-    this.name = event.name
-    this.filename = event.filename
     this.bucket = event.bucket
+    this.filename = event.filename
+    this.name = event.name
     this.size = event.size
+  }
+
+  protected onUploadPreparedEvent(event: UploadPreparedEvent): void {
+    this.url = event.url
   }
 
   protected onUploadConfirmedEvent(): void {

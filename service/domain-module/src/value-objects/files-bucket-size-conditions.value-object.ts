@@ -1,7 +1,7 @@
 import { Guard }   from '@monstrs/guard-clause'
 import { Against } from '@monstrs/guard-clause'
 
-export class FilesBucketLengthConditions {
+export class FilesBucketSizeConditions {
   #min!: number
 
   #max!: number
@@ -26,12 +26,12 @@ export class FilesBucketLengthConditions {
   static create(
     @Against('min').NotNumberBetween(0, Infinity) min: number,
     @Against('max').NotNumberBetween(0, Infinity) max: number
-  ): FilesBucketLengthConditions {
-    const filesBucketLengthConditions = new FilesBucketLengthConditions()
+  ): FilesBucketSizeConditions {
+    const filesBucketSizeConditions = new FilesBucketSizeConditions()
 
-    filesBucketLengthConditions.min = min
-    filesBucketLengthConditions.max = max
+    filesBucketSizeConditions.min = min
+    filesBucketSizeConditions.max = max
 
-    return filesBucketLengthConditions
+    return filesBucketSizeConditions
   }
 }
