@@ -13,8 +13,6 @@ export class FilesBucket {
 
   #path!: string
 
-  #hostname!: string
-
   #conditions!: FilesBucketConditions
 
   get type(): FilesBucketType {
@@ -49,14 +47,6 @@ export class FilesBucket {
     this.#path = path
   }
 
-  get hostname(): string {
-    return this.#hostname
-  }
-
-  private set hostname(hostname: string) {
-    this.#hostname = hostname
-  }
-
   get conditions(): FilesBucketConditions {
     return this.#conditions
   }
@@ -71,7 +61,6 @@ export class FilesBucket {
     @Against('name').Empty() name: string,
     @Against('bucket').Empty() bucket: string,
     @Against('path').Empty() path: string,
-    @Against('hostname').Empty() hostname: string,
     @Against('conditions').NotInstance(FilesBucketConditions) conditions: FilesBucketConditions
   ): FilesBucket {
     const filesBucket = new FilesBucket()
@@ -80,7 +69,6 @@ export class FilesBucket {
     filesBucket.name = name
     filesBucket.bucket = bucket
     filesBucket.path = path
-    filesBucket.hostname = hostname
     filesBucket.conditions = conditions
 
     return filesBucket
