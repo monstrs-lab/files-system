@@ -49,7 +49,7 @@ export class FilesSystemInfrastructureModule implements OnModuleInit {
           s3ClientFactory: S3ClientFactory,
           googleStorageFactory: GoogleStorageFactory
         ): FilesStorageAdapter =>
-          configService.get('storage.type') === 's3'
+          configService.get('storage.provider') === 's3'
             ? new S3FilesStorageAdapterImpl(s3ClientFactory.create())
             : new GoogleFilesStorageAdapterImpl(googleStorageFactory.create()),
         inject: [ConfigService, S3ClientFactory, GoogleStorageFactory],

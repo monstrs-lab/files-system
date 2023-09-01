@@ -1,7 +1,9 @@
 export interface StorageConfiguration {
-  type: 'google-storage' | 's3'
+  provider: 'google-storage' | 's3'
 }
 
-export default (): StorageConfiguration => ({
-  type: (process.env.FILES_STORAGE_TYPE as StorageConfiguration['type']) || 's3',
+export default (): { storage: StorageConfiguration } => ({
+  storage: {
+    provider: (process.env.FILES_STORAGE_PROVIDER as StorageConfiguration['provider']) || 's3',
+  },
 })
