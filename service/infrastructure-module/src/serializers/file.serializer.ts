@@ -1,6 +1,6 @@
 import type { File } from '@files-system/domain-module'
 
-import * as rpc      from '@files-system/files-system-rpc/abstractions'
+import * as rpc      from '@files-system/files-rpc/abstractions'
 
 export class FileSerializer extends rpc.File {
   constructor(private readonly file: File) {

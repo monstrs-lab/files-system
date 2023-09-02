@@ -1,6 +1,6 @@
 import type { File }             from '@files-system/domain-module'
 
-import { ConfirmUploadResponse } from '@files-system/files-system-rpc/abstractions'
+import { ConfirmUploadResponse } from '@files-system/files-rpc/abstractions'
 
 import { FileSerializer }        from './file.serializer.js'
 

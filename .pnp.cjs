@@ -18,8 +18,8 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:entrypoints/service-entrypoint"\
     },\
     {\
-      "name": "@files-system/files-system-rpc",\
-      "reference": "workspace:rpc/files-system-rpc"\
+      "name": "@files-system/files-rpc",\
+      "reference": "workspace:rpc/files-rpc"\
     },\
     {\
       "name": "@files-system/application-module",\
@@ -39,7 +39,7 @@ const RAW_RUNTIME_STATE =
   "fallbackExclusionList": [\
     ["@files-system/application-module", ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/application-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/application-module", "workspace:service/application-module"]],\
     ["@files-system/domain-module", ["virtual:04d2374e5d242dac075acbdcfcc956d6c9361f1ef894d5e95819d0755dfd7dab6662251490e913c29ba41fcec006e0943e21e36f4f2894b8d525a53300d54eeb#workspace:service/domain-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/domain-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/domain-module", "workspace:service/domain-module"]],\
-    ["@files-system/files-system-rpc", ["workspace:rpc/files-system-rpc"]],\
+    ["@files-system/files-rpc", ["workspace:rpc/files-rpc"]],\
     ["@files-system/infrastructure-module", ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/infrastructure-module", "workspace:service/infrastructure-module"]],\
     ["@files-system/service-entrypoint", ["workspace:entrypoints/service-entrypoint"]],\
     ["files-system", ["workspace:."]]\
@@ -1945,10 +1945,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6", {\
-        "packageLocation": "./.yarn/__virtual__/@bufbuild-connect-virtual-1194c77622/0/cache/@bufbuild-connect-npm-0.8.6-465da06876-82349c3113.zip/node_modules/@bufbuild/connect/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6", {\
+        "packageLocation": "./.yarn/__virtual__/@bufbuild-connect-virtual-b1960fef6f/0/cache/@bufbuild-connect-npm-0.8.6-465da06876-82349c3113.zip/node_modules/@bufbuild/connect/",\
         "packageDependencies": [\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
@@ -1967,11 +1967,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6", {\
-        "packageLocation": "./.yarn/__virtual__/@bufbuild-connect-node-virtual-88261d1a41/0/cache/@bufbuild-connect-node-npm-0.8.6-09b0eb3dba-f6cefa6834.zip/node_modules/@bufbuild/connect-node/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6", {\
+        "packageLocation": "./.yarn/__virtual__/@bufbuild-connect-node-virtual-b0478fe24e/0/cache/@bufbuild-connect-node-npm-0.8.6-09b0eb3dba-f6cefa6834.zip/node_modules/@bufbuild/connect-node/",\
         "packageDependencies": [\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@types/bufbuild__connect", null],\
           ["@types/bufbuild__protobuf", null],\
@@ -2004,19 +2004,19 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@bufbuild/protoc-gen-connect-es", [\
       ["npm:0.13.0", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-connect-es-virtual-863f95524b/node_modules/@bufbuild/protoc-gen-connect-es/",\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-connect-es-virtual-340eded78b/node_modules/@bufbuild/protoc-gen-connect-es/",\
         "packageDependencies": [\
           ["@bufbuild/protoc-gen-connect-es", "npm:0.13.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.13.0", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-connect-es-virtual-863f95524b/node_modules/@bufbuild/protoc-gen-connect-es/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.13.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-connect-es-virtual-340eded78b/node_modules/@bufbuild/protoc-gen-connect-es/",\
         "packageDependencies": [\
-          ["@bufbuild/protoc-gen-connect-es", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.13.0"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/protoc-gen-connect-es", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.13.0"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.0"],\
-          ["@bufbuild/protoc-gen-es", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:1.3.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:1.3.1"],\
           ["@bufbuild/protoplugin", "npm:1.3.0"],\
           ["@types/bufbuild__connect", null],\
           ["@types/bufbuild__protoc-gen-es", null]\
@@ -2032,16 +2032,16 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@bufbuild/protoc-gen-es", [\
       ["npm:1.3.1", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-d4fbd5c7db/node_modules/@bufbuild/protoc-gen-es/",\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-52b2d38180/node_modules/@bufbuild/protoc-gen-es/",\
         "packageDependencies": [\
           ["@bufbuild/protoc-gen-es", "npm:1.3.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:1.3.1", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-d4fbd5c7db/node_modules/@bufbuild/protoc-gen-es/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:1.3.1", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-52b2d38180/node_modules/@bufbuild/protoc-gen-es/",\
         "packageDependencies": [\
-          ["@bufbuild/protoc-gen-es", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:1.3.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:1.3.1"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@bufbuild/protoplugin", "npm:1.3.1"],\
           ["@types/bufbuild__protobuf", null]\
@@ -2454,19 +2454,19 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
-    ["@files-system/files-system-rpc", [\
-      ["workspace:rpc/files-system-rpc", {\
-        "packageLocation": "./rpc/files-system-rpc/",\
+    ["@files-system/files-rpc", [\
+      ["workspace:rpc/files-rpc", {\
+        "packageLocation": "./rpc/files-rpc/",\
         "packageDependencies": [\
-          ["@files-system/files-system-rpc", "workspace:rpc/files-system-rpc"],\
+          ["@files-system/files-rpc", "workspace:rpc/files-rpc"],\
           ["@bufbuild/buf", "npm:1.26.1"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
-          ["@bufbuild/protoc-gen-connect-es", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.13.0"],\
-          ["@bufbuild/protoc-gen-es", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:1.3.1"],\
-          ["@monstrs/protoc-gen-abstractions", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.4"],\
-          ["@monstrs/protoc-gen-interfaces", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.3"]\
+          ["@bufbuild/protoc-gen-connect-es", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.13.0"],\
+          ["@bufbuild/protoc-gen-es", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:1.3.1"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.4"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.3"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2476,13 +2476,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@files-system-infrastructure-module-virtual-14cf3b7498/1/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@files-system/infrastructure-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/infrastructure-module"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@faker-js/faker", "npm:8.0.2"],\
           ["@files-system/application-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/application-module"],\
           ["@files-system/domain-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/domain-module"],\
-          ["@files-system/files-system-rpc", "workspace:rpc/files-system-rpc"],\
+          ["@files-system/files-rpc", "workspace:rpc/files-rpc"],\
           ["@jest/globals", "npm:29.6.4"],\
           ["@mikro-orm/cli", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:5.7.14"],\
           ["@mikro-orm/core", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:5.7.14"],\
@@ -2517,7 +2517,7 @@ const RAW_RUNTIME_STATE =
           ["@types/express", "npm:4.17.17"],\
           ["@types/files-system__application-module", null],\
           ["@types/files-system__domain-module", null],\
-          ["@types/files-system__files-system-rpc", null],\
+          ["@types/files-system__files-rpc", null],\
           ["@types/monstrs__nestjs-microservices-registry", null],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
@@ -2542,7 +2542,7 @@ const RAW_RUNTIME_STATE =
           "@bufbuild/connect",\
           "@files-system/application-module",\
           "@files-system/domain-module",\
-          "@files-system/files-system-rpc",\
+          "@files-system/files-rpc",\
           "@monstrs/nestjs-microservices-registry",\
           "@nestjs/common",\
           "@nestjs/core",\
@@ -2554,7 +2554,7 @@ const RAW_RUNTIME_STATE =
           "@types/class-validator",\
           "@types/files-system__application-module",\
           "@types/files-system__domain-module",\
-          "@types/files-system__files-system-rpc",\
+          "@types/files-system__files-rpc",\
           "@types/monstrs__nestjs-microservices-registry",\
           "@types/nestjs__common",\
           "@types/nestjs__core",\
@@ -2573,13 +2573,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./service/infrastructure-module/",\
         "packageDependencies": [\
           ["@files-system/infrastructure-module", "workspace:service/infrastructure-module"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@faker-js/faker", "npm:8.0.2"],\
           ["@files-system/application-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/application-module"],\
           ["@files-system/domain-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/domain-module"],\
-          ["@files-system/files-system-rpc", "workspace:rpc/files-system-rpc"],\
+          ["@files-system/files-rpc", "workspace:rpc/files-rpc"],\
           ["@jest/globals", "npm:29.6.4"],\
           ["@mikro-orm/cli", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:5.7.14"],\
           ["@mikro-orm/core", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:5.7.14"],\
@@ -2628,13 +2628,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./entrypoints/service-entrypoint/",\
         "packageDependencies": [\
           ["@files-system/service-entrypoint", "workspace:entrypoints/service-entrypoint"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@faker-js/faker", "npm:8.0.2"],\
           ["@files-system/application-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/application-module"],\
           ["@files-system/domain-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/domain-module"],\
-          ["@files-system/files-system-rpc", "workspace:rpc/files-system-rpc"],\
+          ["@files-system/files-rpc", "workspace:rpc/files-rpc"],\
           ["@files-system/infrastructure-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/infrastructure-module"],\
           ["@jest/globals", "npm:29.6.4"],\
           ["@monstrs/nestjs-gcs-client", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.1.1"],\
@@ -4307,7 +4307,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-buf-errors-virtual-5f428ca26c/0/cache/@monstrs-nestjs-buf-errors-npm-0.1.3-ab37eb2e4b-d8052fff93.zip/node_modules/@monstrs/nestjs-buf-errors/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-buf-errors", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.1.3"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@monstrs/core-errors", "npm:0.0.2"],\
           ["@monstrs/guard-clause", "npm:0.0.7"],\
@@ -4356,7 +4356,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-buf-errors-virtual-87c39328fe/0/cache/@monstrs-nestjs-buf-errors-npm-0.1.3-ab37eb2e4b-d8052fff93.zip/node_modules/@monstrs/nestjs-buf-errors/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-buf-errors", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:0.1.3"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@monstrs/core-errors", "npm:0.0.2"],\
           ["@monstrs/guard-clause", "npm:0.0.7"],\
@@ -4877,10 +4877,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.4", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-6f0bc7a132/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.4-c2f88da1ef-8eb5a119d1.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-327ecbd5f1/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.4-c2f88da1ef-8eb5a119d1.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-abstractions", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.4"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.4"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@bufbuild/protoplugin", "npm:1.3.0"],\
           ["@types/bufbuild__protobuf", null]\
@@ -4900,10 +4900,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-25db2eac63/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.3-79abec8fc1-55cd58f644.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
+      ["virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-8a400c93de/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.3-79abec8fc1-55cd58f644.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-interfaces", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.0.3"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.0.3"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@bufbuild/protoplugin", "npm:1.3.0"],\
           ["@types/bufbuild__protobuf", null]\
@@ -7739,8 +7739,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@wolfcoded-nestjs-bufconnect-virtual-d0ef013580/0/cache/@wolfcoded-nestjs-bufconnect-patch-d56c189aa8-b384952e28.zip/node_modules/@wolfcoded/nestjs-bufconnect/",\
         "packageDependencies": [\
           ["@wolfcoded/nestjs-bufconnect", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#patch:@wolfcoded/nestjs-bufconnect@npm%3A1.0.0-beta.3#~/.yarn/patches/@wolfcoded-nestjs-bufconnect-npm-1.0.0-beta.3-23836c45da.patch::version=1.0.0-beta.3&hash=e5305d"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@nestjs/common", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/core", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
@@ -7781,8 +7781,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@wolfcoded-nestjs-bufconnect-virtual-9337bf202e/0/cache/@wolfcoded-nestjs-bufconnect-patch-d56c189aa8-b384952e28.zip/node_modules/@wolfcoded/nestjs-bufconnect/",\
         "packageDependencies": [\
           ["@wolfcoded/nestjs-bufconnect", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#patch:@wolfcoded/nestjs-bufconnect@npm%3A1.0.0-beta.3#~/.yarn/patches/@wolfcoded-nestjs-bufconnect-npm-1.0.0-beta.3-23836c45da.patch::version=1.0.0-beta.3&hash=e5305d"],\
-          ["@bufbuild/connect", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
-          ["@bufbuild/connect-node", "virtual:82d2597cb01eced4e5f525768350dad2dc384cbb4353fddc480f11194c1ab20c1a2b464dfeaca07c5b808e98395a8492f16af64644fc032e2a73d8211d0ccbcf#npm:0.8.6"],\
+          ["@bufbuild/connect", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
+          ["@bufbuild/connect-node", "virtual:1eaa40ec3f4ca932cf61a5ffba9ba6a256af36bd42997add9a4d6e1077d2bf46bd769da06202fb7bc1f01e071a52fc2f8a43b8f60ba33527eb856fb9f089f4f1#npm:0.8.6"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@nestjs/common", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/core", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:10.2.4"],\
