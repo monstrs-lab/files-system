@@ -1,7 +1,6 @@
 import type { INestMicroservice }               from '@nestjs/common'
 import type { StartedTestContainer }            from 'testcontainers'
-import type { FilesService }                    from '@files-system/files-rpc/connect'
-import type { PromiseClient }                   from '@files-system/files-rpc'
+import type { PromiseClient }                   from '@connectrpc/connect'
 
 import { fileURLToPath }                        from 'node:url'
 import { join }                                 from 'node:path'
@@ -10,29 +9,31 @@ import { createReadStream }                     from 'node:fs'
 import { GCS_CLIENT_API_ENDPOINT }              from '@monstrs/nestjs-gcs-client'
 import { GCS_CLIENT_KEY_FILENAME }              from '@monstrs/nestjs-gcs-client'
 import { Test }                                 from '@nestjs/testing'
+import { ConnectRpcServer }                     from '@monstrs/nestjs-connectrpc'
+import { ServerProtocol }                       from '@monstrs/nestjs-connectrpc'
+import { ConnectError }                         from '@connectrpc/connect'
 import { describe }                             from '@jest/globals'
 import { afterAll }                             from '@jest/globals'
 import { beforeAll }                            from '@jest/globals'
 import { expect }                               from '@jest/globals'
 import { it }                                   from '@jest/globals'
 import { faker }                                from '@faker-js/faker'
+import { createPromiseClient }                  from '@connectrpc/connect'
+import { createGrpcTransport }                  from '@connectrpc/connect-node'
 import { GenericContainer }                     from 'testcontainers'
 import { Wait }                                 from 'testcontainers'
 import getPort                                  from 'get-port'
 import fetch                                    from 'node-fetch'
 
+import { FilesService }                         from '@files-system/files-rpc/connect'
 import { FilesBucketsAdapter }                  from '@files-system/domain-module'
 import { FilesBucketSizeConditions }            from '@files-system/domain-module'
 import { FilesBucketConditions }                from '@files-system/domain-module'
 import { FilesBucketType }                      from '@files-system/domain-module'
 import { FilesBucket }                          from '@files-system/domain-module'
-import { ServerBufConnect }                     from '@files-system/infrastructure-module'
-import { ServerProtocol }                       from '@files-system/infrastructure-module'
 import { MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT } from '@files-system/infrastructure-module'
 import { StaticFilesBucketsAdapterImpl }        from '@files-system/infrastructure-module'
 import { FILES_STORAGE_PROVIDER }               from '@files-system/infrastructure-module'
-import { ConnectError }                         from '@files-system/files-rpc'
-import { createFilesClient }                    from '@files-system/files-rpc'
 
 import { FilesSystemServiceEntrypointModule }   from '../src/files-system-service-entrypoint.module.js'
 
@@ -106,7 +107,7 @@ describe('files-service', () => {
           .compile()
 
         service = testingModule.createNestMicroservice({
-          strategy: new ServerBufConnect({
+          strategy: new ConnectRpcServer({
             protocol: ServerProtocol.HTTP2_INSECURE,
             port,
           }),
@@ -114,7 +115,14 @@ describe('files-service', () => {
 
         await service.listen()
 
-        client = createFilesClient({ baseUrl: `http://localhost:${port}` })
+        client = createPromiseClient(
+          FilesService,
+          createGrpcTransport({
+            httpVersion: '2',
+            baseUrl: `http://localhost:${port}`,
+            idleConnectionTimeoutMs: 1000,
+          })
+        )
       })
 
       afterAll(async () => {

@@ -16,8 +16,8 @@ import { S3ClientModule }                              from '@monstrs/nestjs-s3-
 import { S3ClientFactory }                             from '@monstrs/nestjs-s3-client'
 import { GcsClientModule }                             from '@monstrs/nestjs-gcs-client'
 import { GcsClientFactory }                            from '@monstrs/nestjs-gcs-client'
-import { ServerBufConnect }                            from '@wolfcoded/nestjs-bufconnect'
-import { ServerProtocol }                              from '@wolfcoded/nestjs-bufconnect'
+import { ConnectRpcServer }                            from '@monstrs/nestjs-connectrpc'
+import { ServerProtocol }                              from '@monstrs/nestjs-connectrpc'
 import { MicroservisesRegistryModule }                 from '@monstrs/nestjs-microservices-registry'
 
 import { UploadRepository }                            from '@files-system/domain-module'
@@ -78,7 +78,7 @@ export class FilesSystemInfrastructureModule implements OnModuleInit {
       controllers: Object.values(controllers),
       imports: [
         MicroservisesRegistryModule.connect({
-          strategy: new ServerBufConnect({
+          strategy: new ConnectRpcServer({
             protocol: ServerProtocol.HTTP2_INSECURE,
             port: 50051,
           }),
