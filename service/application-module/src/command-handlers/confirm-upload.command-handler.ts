@@ -6,6 +6,7 @@ import { CommandHandler }       from '@nestjs/cqrs'
 
 import { UploadRepository }     from '@files-system/domain-module'
 import { FileRepository }       from '@files-system/domain-module'
+import { FilesStorageAdapter }  from '@files-system/domain-module'
 
 import { ConfirmUploadCommand } from '../commands/index.js'
 
@@ -13,7 +14,8 @@ import { ConfirmUploadCommand } from '../commands/index.js'
 export class ConfirmUploadCommandHandler implements ICommandHandler<ConfirmUploadCommand, void> {
   constructor(
     private readonly uploadRepository: UploadRepository,
-    private readonly fileRepository: FileRepository
+    private readonly fileRepository: FileRepository,
+    private readonly storageAdapter: FilesStorageAdapter
   ) {}
 
   async execute(command: ConfirmUploadCommand): Promise<void> {
@@ -21,7 +23,9 @@ export class ConfirmUploadCommandHandler implements ICommandHandler<ConfirmUploa
 
     assert.ok(upload, `Upload with id '${command.uploadId}' not found`)
 
-    const file = await upload.confirm(command.ownerId)
+    const metadata = await this.storageAdapter.toFileMetadata(upload)
+
+    const file = await upload.confirm(command.ownerId, metadata!)
 
     await this.uploadRepository.save(upload)
     await this.fileRepository.save(file)

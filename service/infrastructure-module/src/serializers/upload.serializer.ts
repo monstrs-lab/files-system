@@ -14,4 +14,8 @@ export class UploadSerializer extends rpc.Upload {
   get url(): string {
     return this.upload.url
   }
+
+  get ownerId(): string {
+    return this.upload.ownerId
+  }
 }

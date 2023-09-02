@@ -20,6 +20,11 @@ export abstract class File {
    * @generated from field: string url = 2;
    */
   abstract readonly url: string
+
+  /**
+   * @generated from field: string owner_id = 3;
+   */
+  abstract readonly ownerId: string
 }
 
 /**
@@ -35,6 +40,11 @@ export abstract class Upload {
    * @generated from field: string url = 2;
    */
   abstract readonly url: string
+
+  /**
+   * @generated from field: string owner_id = 3;
+   */
+  abstract readonly ownerId: string
 }
 
 /**
@@ -107,9 +117,9 @@ export abstract class ConfirmUploadRequest {
  */
 export abstract class ConfirmUploadResponse {
   /**
-   * @generated from field: tech.monstrs.filessystem.v1alpha1.Upload result = 1;
+   * @generated from field: tech.monstrs.filessystem.v1alpha1.File result = 1;
    */
-  abstract readonly result?: Upload
+  abstract readonly result?: File
 }
 
 /**

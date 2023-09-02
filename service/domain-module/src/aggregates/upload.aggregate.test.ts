@@ -3,6 +3,7 @@ import { expect }                      from '@jest/globals'
 import { it }                          from '@jest/globals'
 import { faker }                       from '@faker-js/faker'
 
+import { StorageFileMetadata }         from '../value-objects/index.js'
 import { FilesBucketSizeConditions }   from '../value-objects/index.js'
 import { FilesBucketConditions }       from '../value-objects/index.js'
 import { FilesBucket }                 from '../value-objects/index.js'
@@ -12,6 +13,7 @@ import { UploadNotReadyError }         from '../errors/index.js'
 import { UknownFileTypeError }         from '../errors/index.js'
 import { InvalidContentTypeError }     from '../errors/index.js'
 import { InvalidContentSizeError }     from '../errors/index.js'
+import { FileNotUploadedError }        from '../errors/index.js'
 import { FilesBucketType }             from '../enums/index.js'
 import { Upload }                      from './upload.aggregate.js'
 
@@ -157,9 +159,11 @@ describe('files-system', () => {
 
         describe('confirm', () => {
           it('check url', async () => {
-            expect(() => new Upload().confirm(faker.string.uuid())).toThrowError(
-              UploadNotReadyError
-            )
+            expect(() =>
+              new Upload().confirm(
+                faker.string.uuid(),
+                StorageFileMetadata.create(faker.image.urlPlaceholder(), 206, 'image/png')
+              )).toThrowError(UploadNotReadyError)
           })
 
           it('check match initiator', async () => {
@@ -180,8 +184,34 @@ describe('files-system', () => {
               )
               .prepare(faker.image.urlPlaceholder())
 
-            expect(() => upload.confirm(faker.string.uuid())).toThrowError(
-              UploadInitiatorDoesNotMatch
+            expect(() =>
+              upload.confirm(
+                faker.string.uuid(),
+                StorageFileMetadata.create(faker.image.urlPlaceholder(), 206, 'image/png')
+              )).toThrowError(UploadInitiatorDoesNotMatch)
+          })
+
+          it('check file uploaded', async () => {
+            const upload = new Upload()
+              .create(
+                faker.string.uuid(),
+                faker.string.uuid(),
+                FilesBucket.create(
+                  FilesBucketType.PUBLIC,
+                  faker.word.sample(),
+                  faker.word.sample(),
+                  faker.system.directoryPath(),
+
+                  FilesBucketConditions.create('image/*', FilesBucketSizeConditions.create(0, 100))
+                ),
+                faker.system.commonFileName('png'),
+                faker.number.int({ min: 1, max: 99 })
+              )
+              .prepare(faker.image.urlPlaceholder())
+
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            expect(() => upload.confirm(upload.ownerId, undefined as any)).toThrowError(
+              FileNotUploadedError
             )
           })
 
@@ -204,7 +234,10 @@ describe('files-system', () => {
               .prepare(faker.image.urlPlaceholder())
 
             upload.commit()
-            upload.confirm(upload.ownerId)
+            upload.confirm(
+              upload.ownerId,
+              StorageFileMetadata.create(faker.image.urlPlaceholder(), 206, 'image/png')
+            )
 
             expect(upload.getUncommittedEvents()).toEqual(
               expect.arrayContaining([
@@ -239,9 +272,16 @@ describe('files-system', () => {
               )
               .prepare(faker.image.urlPlaceholder())
 
-            upload.confirm(upload.ownerId)
+            upload.confirm(
+              upload.ownerId,
+              StorageFileMetadata.create(faker.image.urlPlaceholder(), 206, 'image/png')
+            )
 
-            expect(() => upload.confirm(upload.ownerId)).toThrowError(UploadAlreadyConfirmedError)
+            expect(() =>
+              upload.confirm(
+                upload.ownerId,
+                StorageFileMetadata.create(faker.image.urlPlaceholder(), 206, 'image/png')
+              )).toThrowError(UploadAlreadyConfirmedError)
           })
         })
       })
