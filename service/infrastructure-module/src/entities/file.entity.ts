@@ -17,9 +17,6 @@ export class FileEntity extends BaseEntity<FileEntity, 'id'> {
   @Property({ type: 'uuid' })
   ownerId!: string
 
-  @Property()
-  name!: string
-
   @Property({ length: 2048 })
   url!: string
 }

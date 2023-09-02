@@ -9,6 +9,7 @@ import { Against }                     from '@monstrs/guard-clause'
 import match                           from 'mime-match'
 import mime                            from 'mime-types'
 
+import { StorageFileMetadata }         from '../value-objects/index.js'
 import { FilesBucket }                 from '../value-objects/index.js'
 import { UploadConfirmedEvent }        from '../events/index.js'
 import { UploadPreparedEvent }         from '../events/index.js'
@@ -19,6 +20,7 @@ import { InvalidContentSizeError }     from '../errors/index.js'
 import { UploadNotReadyError }         from '../errors/index.js'
 import { UploadAlreadyConfirmedError } from '../errors/index.js'
 import { UploadInitiatorDoesNotMatch } from '../errors/index.js'
+import { FileNotUploadedError }        from '../errors/index.js'
 import { File }                        from './file.aggregate.js'
 
 export class Upload extends AggregateRoot {
@@ -153,7 +155,10 @@ export class Upload extends AggregateRoot {
   }
 
   @Guard()
-  confirm(@Against('ownerId').NotUUID(4) ownerId: string): File {
+  confirm(
+    @Against('ownerId').NotUUID(4) ownerId: string,
+    @Against('metadadta').Optional.NotInstance(StorageFileMetadata) metadata: StorageFileMetadata
+  ): File {
     if (this.confirmed) {
       throw new UploadAlreadyConfirmedError()
     }
@@ -166,11 +171,13 @@ export class Upload extends AggregateRoot {
       throw new UploadInitiatorDoesNotMatch()
     }
 
+    if (!metadata) {
+      throw new FileNotUploadedError()
+    }
+
     this.apply(new UploadConfirmedEvent(this.id))
 
-    const file = File.create(this.id, this.ownerId, this.bucket.type, this.url)
-
-    return file
+    return File.create(this.id, this.ownerId, this.bucket.type, metadata.url || this.url)
   }
 
   protected onUploadCreatedEvent(event: UploadCreatedEvent): void {

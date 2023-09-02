@@ -20,6 +20,11 @@ export interface File {
    * @generated from field: string url = 2;
    */
   url: string
+
+  /**
+   * @generated from field: string owner_id = 3;
+   */
+  ownerId: string
 }
 
 /**
@@ -35,6 +40,11 @@ export interface Upload {
    * @generated from field: string url = 2;
    */
   url: string
+
+  /**
+   * @generated from field: string owner_id = 3;
+   */
+  ownerId: string
 }
 
 /**
@@ -107,9 +117,9 @@ export interface ConfirmUploadRequest {
  */
 export interface ConfirmUploadResponse {
   /**
-   * @generated from field: tech.monstrs.filessystem.v1alpha1.Upload result = 1;
+   * @generated from field: tech.monstrs.filessystem.v1alpha1.File result = 1;
    */
-  result?: Upload
+  result?: File
 }
 
 /**

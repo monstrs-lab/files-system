@@ -13,11 +13,13 @@ service FilesService {
 message File {
   string id = 1;
   string url = 2;
+  string owner_id = 3;
 }
 
 message Upload {
   string id = 1;
   string url = 2;
+  string owner_id = 3;
 }
 
 message ListFilesResponse {
@@ -42,7 +44,7 @@ message ConfirmUploadRequest {
 }
 
 message ConfirmUploadResponse {
-  Upload result = 1;
+  File result = 1;
 }
 
 message ListFilesRequest {
