@@ -26,9 +26,7 @@
     "@monstrs/nestjs-s3-client": "^0.1.2",
     "@monstrs/nestjs-validation": "^0.1.1",
     "@monstrs/rpc-query-payloads": "^0.0.11",
-    "@nestjs/config": "^3.0.1",
     "@wolfcoded/nestjs-bufconnect": "^1.0.0-beta.3",
-    "ajv": "^8.12.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
