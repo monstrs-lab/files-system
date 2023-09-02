@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
-import type { ServiceImpl }            from '@files-system/files-rpc'
+import type { ServiceImpl }            from '@connectrpc/connect'
 import type { Upload }                 from '@files-system/domain-module'
 import type { File }                   from '@files-system/domain-module'
 import type { FindFilesByQueryResult } from '@files-system/domain-module'
@@ -14,11 +14,11 @@ import type { ConfirmUploadResponse }  from '@files-system/files-rpc/interfaces'
 import { Controller }                  from '@nestjs/common'
 import { QueryBus }                    from '@nestjs/cqrs'
 import { Validator }                   from '@monstrs/nestjs-validation'
-import { BufMethod }                   from '@wolfcoded/nestjs-bufconnect'
-import { BufService }                  from '@wolfcoded/nestjs-bufconnect'
+import { ConnectRpcMethod }            from '@monstrs/nestjs-connectrpc'
+import { ConnectRpcService }           from '@monstrs/nestjs-connectrpc'
 import { UseFilters }                  from '@nestjs/common'
 import { CommandBus }                  from '@nestjs/cqrs'
-import { BufExceptionsFilter }         from '@monstrs/nestjs-buf-errors'
+import { ConnectRpcExceptionsFilter }  from '@monstrs/nestjs-connectrpc-errors'
 import { v4 as uuid }                  from 'uuid'
 
 import { FilesService }                from '@files-system/files-rpc/connect'
@@ -36,8 +36,8 @@ import { ListFilesPayload }            from '../payloads/index.js'
 import { ListFilesSerializer }         from '../serializers/index.js'
 
 @Controller()
-@BufService(FilesService)
-@UseFilters(BufExceptionsFilter)
+@ConnectRpcService(FilesService)
+@UseFilters(ConnectRpcExceptionsFilter)
 export class FilesController implements ServiceImpl<typeof FilesService> {
   constructor(
     private readonly commandBus: CommandBus,
@@ -45,7 +45,7 @@ export class FilesController implements ServiceImpl<typeof FilesService> {
     private readonly validator: Validator
   ) {}
 
-  @BufMethod()
+  @ConnectRpcMethod()
   async createUpload(request: CreateUploadRequest): Promise<CreateUploadResponse> {
     const payload = new CreateUploadPayload(request)
 
@@ -68,7 +68,7 @@ export class FilesController implements ServiceImpl<typeof FilesService> {
     )
   }
 
-  @BufMethod()
+  @ConnectRpcMethod()
   async confirmUpload(request: ConfirmUploadRequest): Promise<ConfirmUploadResponse> {
     const payload = new ConfirmUploadPayload(request)
 
@@ -83,7 +83,7 @@ export class FilesController implements ServiceImpl<typeof FilesService> {
     )
   }
 
-  @BufMethod()
+  @ConnectRpcMethod()
   async listFiles(request: ListFilesRequest): Promise<ListFilesResponse> {
     const payload = new ListFilesPayload(request)
 
