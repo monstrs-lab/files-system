@@ -1,7 +1,7 @@
 import type { INestMicroservice }               from '@nestjs/common'
 import type { StartedTestContainer }            from 'testcontainers'
-import type { FilesService }                    from '@files-system/files-system-rpc/connect'
-import type { PromiseClient }                   from '@files-system/files-system-rpc'
+import type { FilesService }                    from '@files-system/files-rpc/connect'
+import type { PromiseClient }                   from '@files-system/files-rpc'
 
 import { fileURLToPath }                        from 'node:url'
 import { join }                                 from 'node:path'
@@ -31,8 +31,8 @@ import { ServerBufConnect }                     from '@files-system/infrastructu
 import { ServerProtocol }                       from '@files-system/infrastructure-module'
 import { MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT } from '@files-system/infrastructure-module'
 import { StaticFilesBucketsAdapterImpl }        from '@files-system/infrastructure-module'
-import { ConnectError }                         from '@files-system/files-system-rpc'
-import { createFilesClient }                    from '@files-system/files-system-rpc'
+import { ConnectError }                         from '@files-system/files-rpc'
+import { createFilesClient }                    from '@files-system/files-rpc'
 
 import { FilesSystemServiceEntrypointModule }   from '../src/files-system-service-entrypoint.module.js'
 

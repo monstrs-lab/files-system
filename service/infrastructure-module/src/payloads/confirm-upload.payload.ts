@@ -1,4 +1,4 @@
-import type { ConfirmUploadRequest } from '@files-system/files-system-rpc/interfaces'
+import type { ConfirmUploadRequest } from '@files-system/files-rpc/interfaces'
 
 import { IsUUID }                    from 'class-validator'
 

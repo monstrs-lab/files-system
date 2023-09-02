@@ -1,7 +1,7 @@
 import type { INestMicroservice }               from '@nestjs/common'
 import type { StartedTestContainer }            from 'testcontainers'
-import type { FilesService }                    from '@files-system/files-system-rpc/connect'
-import type { PromiseClient }                   from '@files-system/files-system-rpc'
+import type { FilesService }                    from '@files-system/files-rpc/connect'
+import type { PromiseClient }                   from '@files-system/files-rpc'
 
 import { S3_CLIENT_ENDPOINT }                   from '@monstrs/nestjs-s3-client'
 import { S3_CLIENT_REGION }                     from '@monstrs/nestjs-s3-client'
@@ -23,12 +23,12 @@ import { FilesBucketSizeConditions }            from '@files-system/domain-modul
 import { FilesBucketConditions }                from '@files-system/domain-module'
 import { FilesBucketType }                      from '@files-system/domain-module'
 import { FilesBucket }                          from '@files-system/domain-module'
-import { ConnectError }                         from '@files-system/files-system-rpc'
+import { ConnectError }                         from '@files-system/files-rpc'
 import { ServerBufConnect }                     from '@files-system/infrastructure-module'
 import { ServerProtocol }                       from '@files-system/infrastructure-module'
 import { MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT } from '@files-system/infrastructure-module'
 import { StaticFilesBucketsAdapterImpl }        from '@files-system/infrastructure-module'
-import { createFilesClient }                    from '@files-system/files-system-rpc'
+import { createFilesClient }                    from '@files-system/files-rpc'
 
 import { FilesSystemServiceEntrypointModule }   from '../src/files-system-service-entrypoint.module.js'
 

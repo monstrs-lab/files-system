@@ -1,6 +1,6 @@
 import type { Upload }          from '@files-system/domain-module'
 
-import { CreateUploadResponse } from '@files-system/files-system-rpc/abstractions'
+import { CreateUploadResponse } from '@files-system/files-rpc/abstractions'
 
 import { UploadSerializer }     from './upload.serializer.js'
 

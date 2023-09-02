@@ -1,5 +1,5 @@
 {
-  "name": "@files-system/files-system-rpc",
+  "name": "@files-system/files-rpc",
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
