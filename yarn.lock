@@ -1727,7 +1727,6 @@ __metadata:
     "@monstrs/nestjs-validation": "npm:^0.1.1"
     "@monstrs/rpc-query-payloads": "npm:^0.0.11"
     "@nestjs/common": "npm:^10.2.4"
-    "@nestjs/config": "npm:^3.0.1"
     "@nestjs/core": "npm:^10.2.4"
     "@nestjs/cqrs": "npm:^10.2.5"
     "@nestjs/microservices": "npm:^10.2.4"
@@ -1737,7 +1736,6 @@ __metadata:
     "@types/node": "npm:^20.5.7"
     "@types/uuid": "npm:^9.0.3"
     "@wolfcoded/nestjs-bufconnect": "npm:^1.0.0-beta.3"
-    ajv: "npm:^8.12.0"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
     reflect-metadata: "npm:^0.1.13"
@@ -2835,21 +2833,6 @@ __metadata:
     class-validator:
       optional: true
   checksum: d5a0f5781d2370af63dafd1da335bd6b344f76659a30cea214704ee922292e60cd86c534e7a61788243878352d5998a2c2e16622558122c4036e27da6bf2c9c4
-  languageName: node
-  linkType: hard
-
-"@nestjs/config@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@nestjs/config@npm:3.0.1"
-  dependencies:
-    dotenv: "npm:16.3.1"
-    dotenv-expand: "npm:10.0.0"
-    lodash: "npm:4.17.21"
-    uuid: "npm:9.0.0"
-  peerDependencies:
-    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
-    reflect-metadata: ^0.1.13
-  checksum: ccc1fb19ae1e34b2b5c8ed4d4620328a09ba4c9cf8108ee33d860234bb7c07a9153e23a171cbbfb4c89eb1e1a1872cffe9e4b08f0c6f541d992f937e0e7b51c1
   languageName: node
   linkType: hard
 
@@ -6158,13 +6141,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-expand@npm:10.0.0":
-  version: 10.0.0
-  resolution: "dotenv-expand@npm:10.0.0"
-  checksum: 298f5018e29cfdcb0b5f463ba8e8627749103fbcf6cf81c561119115754ed582deee37b49dfc7253028aaba875ab7aea5fa90e5dac88e511d009ab0e6677924e
-  languageName: node
-  linkType: hard
-
 "dotenv@npm:16.3.1":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
@@ -9105,7 +9081,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.17.21":
+"lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
