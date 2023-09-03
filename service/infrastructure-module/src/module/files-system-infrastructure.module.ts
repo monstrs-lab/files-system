@@ -22,6 +22,7 @@ import { ServerProtocol }                              from '@monstrs/nestjs-con
 import { MicroservisesRegistryModule }                 from '@monstrs/nestjs-microservices-registry'
 import { CqrsKafkaEventsModule }                       from '@monstrs/nestjs-cqrs-kafka-events'
 
+import { TransactionalRepository }                     from '@files-system/domain-module'
 import { UploadRepository }                            from '@files-system/domain-module'
 import { FileRepository }                              from '@files-system/domain-module'
 import { FilesBucketsAdapter }                         from '@files-system/domain-module'
@@ -31,6 +32,7 @@ import * as entities                                   from '../entities/index.j
 import * as migrations                                 from '../migrations/index.js'
 import * as controllers                                from '../controllers/index.js'
 import * as mappers                                    from '../mappers/index.js'
+import { TransactionalRepositoryImpl }                 from '../repositories/index.js'
 import { UploadRepositoryImpl }                        from '../repositories/index.js'
 import { FileRepositoryImpl }                          from '../repositories/index.js'
 import { S3FilesStorageAdapterImpl }                   from '../ports/index.js'
@@ -68,6 +70,10 @@ export class FilesSystemInfrastructureModule implements OnModuleInit {
       {
         provide: FilesBucketsAdapter,
         useClass: EnvFilesBucketsAdapterImpl,
+      },
+      {
+        provide: TransactionalRepository,
+        useClass: TransactionalRepositoryImpl,
       },
       {
         provide: UploadRepository,
