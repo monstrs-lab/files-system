@@ -1,4 +1,6 @@
 import type { Upload }                              from '@files-system/domain-module'
+import type { RecordMetadata }                      from '@monstrs/nestjs-cqrs-kafka-events'
+import type { IEvent }                              from '@nestjs/cqrs'
 
 import { Inject }                                   from '@nestjs/common'
 import { Injectable }                               from '@nestjs/common'
@@ -37,7 +39,9 @@ export class UploadRepositoryImpl extends UploadRepository {
       await em.persist(this.mapper.toPersistence(aggregate, exists)).flush()
 
       if (aggregate.getUncommittedEvents().length > 0) {
-        this.eventBus.publishAll(aggregate.getUncommittedEvents())
+        await this.eventBus.publishAll<IEvent, Promise<Array<RecordMetadata>>>(
+          aggregate.getUncommittedEvents()
+        )
       }
 
       aggregate.commit()
