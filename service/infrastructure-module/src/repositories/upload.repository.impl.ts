@@ -29,13 +29,25 @@ export class UploadRepositoryImpl extends UploadRepository {
   async save(aggregate: Upload): Promise<void> {
     const exists = (await this.repository.findOne(aggregate.id)) || new UploadEntity()
 
-    await this.em.persist(this.mapper.toPersistence(aggregate, exists)).flush()
+    const em = this.em.fork()
 
-    if (aggregate.getUncommittedEvents().length > 0) {
-      this.eventBus.publishAll(aggregate.getUncommittedEvents())
+    await em.begin()
+
+    try {
+      await em.persist(this.mapper.toPersistence(aggregate, exists)).flush()
+
+      if (aggregate.getUncommittedEvents().length > 0) {
+        this.eventBus.publishAll(aggregate.getUncommittedEvents())
+      }
+
+      aggregate.commit()
+
+      await em.commit()
+    } catch (error) {
+      await em.rollback()
+
+      throw error
     }
-
-    aggregate.commit()
   }
 
   async findById(id: string): Promise<Upload | undefined> {

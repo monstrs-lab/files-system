@@ -32,13 +32,25 @@ export class FileRepositoryImpl extends FileRepository {
   async save(aggregate: File): Promise<void> {
     const exists = (await this.repository.findOne(aggregate.id)) || new FileEntity()
 
-    await this.em.persist(this.mapper.toPersistence(aggregate, exists)).flush()
+    const em = this.em.fork()
 
-    if (aggregate.getUncommittedEvents().length > 0) {
-      this.eventBus.publishAll(aggregate.getUncommittedEvents())
+    await em.begin()
+
+    try {
+      em.persist(this.mapper.toPersistence(aggregate, exists))
+
+      if (aggregate.getUncommittedEvents().length > 0) {
+        this.eventBus.publishAll(aggregate.getUncommittedEvents())
+      }
+
+      aggregate.commit()
+
+      await em.commit()
+    } catch (error) {
+      await em.rollback()
+
+      throw error
     }
-
-    aggregate.commit()
   }
 
   async findById(id: string): Promise<File | undefined> {
