@@ -1746,11 +1746,13 @@ __metadata:
     typescript: "npm:^5.2.2"
     uuid: "npm:^9.0.0"
   peerDependencies:
+    "@bufbuild/protobuf": ^1.3.1
     "@connectrpc/connect": ^0.13
     "@connectrpc/connect-node": ^0.13
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
     "@files-system/files-rpc": "workspace:0.0.1"
+    "@monstrs/nestjs-microservices-registry": ^0.1.0
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/cqrs": ^10
@@ -1777,6 +1779,7 @@ __metadata:
     "@jest/globals": "npm:^29.6.4"
     "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
     "@monstrs/nestjs-s3-client": "npm:^0.1.3"
     "@monstrs/protobuf-rpc": "npm:0.0.6"
     "@nestjs/common": "npm:^10.2.4"

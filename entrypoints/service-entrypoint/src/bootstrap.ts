@@ -1,7 +1,6 @@
 import { NestLogger }                         from '@monstrs/nestjs-logger'
 import { NestFactory }                        from '@nestjs/core'
-
-import { MicroservisesRegistry }              from '@files-system/infrastructure-module'
+import { MicroservisesRegistry }              from '@monstrs/nestjs-microservices-registry'
 
 import { FilesSystemServiceEntrypointModule } from './files-system-service-entrypoint.module.js'
 

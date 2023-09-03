@@ -1,5 +1,7 @@
 import type { File }                                from '@files-system/domain-module'
 import type { Upload }                              from '@files-system/domain-module'
+import type { RecordMetadata }                      from '@monstrs/nestjs-cqrs-kafka-events'
+import type { IEvent }                              from '@nestjs/cqrs'
 
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
@@ -44,7 +46,10 @@ export class TransactionalRepositoryImpl extends TransactionalRepository {
       em.persist(this.uploadMapper.toPersistence(upload, uploadEntity))
       em.persist(this.fileMapper.toPersistence(file, fileEntity))
 
-      this.eventBus.publishAll([...upload.getUncommittedEvents(), ...file.getUncommittedEvents()])
+      await this.eventBus.publishAll<IEvent, Promise<Array<RecordMetadata>>>([
+        ...upload.getUncommittedEvents(),
+        ...file.getUncommittedEvents(),
+      ])
 
       upload.commit()
       file.commit()
