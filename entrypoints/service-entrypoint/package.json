@@ -26,7 +26,7 @@
     "@monstrs/nestjs-logger": "^0.4.2",
     "@monstrs/nestjs-microservices-registry": "^0.1.0",
     "@monstrs/nestjs-s3-client": "^0.1.3",
-    "@monstrs/protobuf-rpc": "0.0.6",
+    "@monstrs/protobuf-rpc": "0.0.7",
     "@nestjs/common": "^10.2.4",
     "@nestjs/core": "^10.2.4",
     "@nestjs/cqrs": "^10.2.5",

@@ -1938,13 +1938,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@bufbuild/protobuf", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "./.yarn/cache/@bufbuild-protobuf-npm-1.3.0-da600c7f9c-c1a5fdec23.zip/node_modules/@bufbuild/protobuf/",\
-        "packageDependencies": [\
-          ["@bufbuild/protobuf", "npm:1.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:1.3.1", {\
         "packageLocation": "./.yarn/cache/@bufbuild-protobuf-npm-1.3.1-dc09ed1943-a3bcdf15ac.zip/node_modules/@bufbuild/protobuf/",\
         "packageDependencies": [\
@@ -1977,16 +1970,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@bufbuild/protoplugin", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "./.yarn/cache/@bufbuild-protoplugin-npm-1.3.0-80665a77c5-cf5b4fe12b.zip/node_modules/@bufbuild/protoplugin/",\
-        "packageDependencies": [\
-          ["@bufbuild/protoplugin", "npm:1.3.0"],\
-          ["@bufbuild/protobuf", "npm:1.3.0"],\
-          ["@typescript/vfs", "npm:1.5.0"],\
-          ["typescript", "patch:typescript@npm%3A5.1.6#optional!builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:1.3.1", {\
         "packageLocation": "./.yarn/cache/@bufbuild-protoplugin-npm-1.3.1-4559c99c74-6358c72c4f.zip/node_modules/@bufbuild/protoplugin/",\
         "packageDependencies": [\
@@ -2460,8 +2443,8 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@bufbuild/protoc-gen-es", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:1.3.1"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.13.2"],\
-          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"],\
-          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
@@ -2478,8 +2461,8 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@bufbuild/protoc-gen-es", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:1.3.1"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.13.2"],\
-          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"],\
-          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.3"]\
+          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2661,7 +2644,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/nestjs-logger", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.1.0"],\
           ["@monstrs/nestjs-s3-client", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.1.3"],\
-          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.6"],\
+          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.7"],\
           ["@nestjs/common", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/core", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/cqrs", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.5"],\
@@ -4431,7 +4414,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/core-errors", "npm:0.0.2"],\
           ["@monstrs/guard-clause", "npm:0.0.7"],\
           ["@monstrs/nestjs-validation", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.1.1"],\
-          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.6"],\
+          ["@monstrs/protobuf-rpc", "virtual:0f3d2a9271285bc635b5c4612eb60ad46edd415a4305bff82a5fe3b63ea131cb4bf5da09073e343f6ff7f02cc59fae1c11b27061bb66d14dc153e607660f120d#npm:0.0.6"],\
           ["@nestjs/common", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/core", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/microservices", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
@@ -4479,7 +4462,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/core-errors", "npm:0.0.2"],\
           ["@monstrs/guard-clause", "npm:0.0.7"],\
           ["@monstrs/nestjs-validation", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:0.1.1"],\
-          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.6"],\
+          ["@monstrs/protobuf-rpc", "virtual:0f3d2a9271285bc635b5c4612eb60ad46edd415a4305bff82a5fe3b63ea131cb4bf5da09073e343f6ff7f02cc59fae1c11b27061bb66d14dc153e607660f120d#npm:0.0.6"],\
           ["@nestjs/common", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:10.2.4"],\
           ["@nestjs/core", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:10.2.4"],\
           ["@nestjs/microservices", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#npm:10.2.4"],\
@@ -5172,10 +5155,29 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.6", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-protobuf-rpc-virtual-cf9c4d491d/0/cache/@monstrs-protobuf-rpc-npm-0.0.6-b3d06f70ed-fe03f90630.zip/node_modules/@monstrs/protobuf-rpc/",\
+      ["npm:0.0.7", {\
+        "packageLocation": "./.yarn/cache/@monstrs-protobuf-rpc-npm-0.0.7-b4dc0ede7a-74cef1d746.zip/node_modules/@monstrs/protobuf-rpc/",\
         "packageDependencies": [\
-          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.6"],\
+          ["@monstrs/protobuf-rpc", "npm:0.0.7"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:0f3d2a9271285bc635b5c4612eb60ad46edd415a4305bff82a5fe3b63ea131cb4bf5da09073e343f6ff7f02cc59fae1c11b27061bb66d14dc153e607660f120d#npm:0.0.6", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protobuf-rpc-virtual-367ef96b20/0/cache/@monstrs-protobuf-rpc-npm-0.0.6-b3d06f70ed-fe03f90630.zip/node_modules/@monstrs/protobuf-rpc/",\
+        "packageDependencies": [\
+          ["@monstrs/protobuf-rpc", "virtual:0f3d2a9271285bc635b5c4612eb60ad46edd415a4305bff82a5fe3b63ea131cb4bf5da09073e343f6ff7f02cc59fae1c11b27061bb66d14dc153e607660f120d#npm:0.0.6"],\
+          ["@bufbuild/protobuf", "npm:1.3.1"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protobuf-rpc-virtual-e9a7517cef/0/cache/@monstrs-protobuf-rpc-npm-0.0.7-b4dc0ede7a-74cef1d746.zip/node_modules/@monstrs/protobuf-rpc/",\
+        "packageDependencies": [\
+          ["@monstrs/protobuf-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.7"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
@@ -5187,19 +5189,19 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/protoc-gen-abstractions", [\
-      ["npm:0.0.4", {\
-        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-abstractions-npm-0.0.4-c2f88da1ef-8eb5a119d1.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
+      ["npm:0.0.5", {\
+        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-abstractions-npm-0.0.5-3eadd16bfe-fcb2b3e9d8.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-abstractions", "npm:0.0.4"]\
+          ["@monstrs/protoc-gen-abstractions", "npm:0.0.5"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-233c3dcf8a/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.4-c2f88da1ef-8eb5a119d1.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
+      ["virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.5", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-d7aba9e31c/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.5-3eadd16bfe-fcb2b3e9d8.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.5"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
-          ["@bufbuild/protoplugin", "npm:1.3.0"],\
+          ["@bufbuild/protoplugin", "npm:1.3.1"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
@@ -5210,19 +5212,19 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/protoc-gen-interfaces", [\
-      ["npm:0.0.3", {\
-        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-interfaces-npm-0.0.3-79abec8fc1-55cd58f644.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
+      ["npm:0.0.4", {\
+        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-interfaces-npm-0.0.4-4e7e6d7429-d02c45f21e.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-interfaces", "npm:0.0.3"]\
+          ["@monstrs/protoc-gen-interfaces", "npm:0.0.4"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-e945755f80/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.3-79abec8fc1-55cd58f644.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
+      ["virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-55554ccbb9/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.4-4e7e6d7429-d02c45f21e.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
         "packageDependencies": [\
-          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.3"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
-          ["@bufbuild/protoplugin", "npm:1.3.0"],\
+          ["@bufbuild/protoplugin", "npm:1.3.1"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
