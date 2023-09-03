@@ -21,6 +21,7 @@
     "@files-system/files-rpc": "workspace:0.0.1",
     "@files-system/infrastructure-module": "workspace:0.0.1",
     "@jest/globals": "^29.6.4",
+    "@monstrs/nestjs-connectrpc": "^0.0.2",
     "@monstrs/nestjs-gcs-client": "^0.1.2",
     "@monstrs/nestjs-logger": "^0.4.2",
     "@monstrs/nestjs-microservices-registry": "^0.1.0",

@@ -2508,7 +2508,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.17"],\
           ["@monstrs/mikro-orm-query-builder", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.9"],\
-          ["@monstrs/nestjs-connectrpc", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.2"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.2"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.2"],\
           ["@monstrs/nestjs-cqrs", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.3"],\
           ["@monstrs/nestjs-cqrs-kafka-events", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.2"],\
@@ -2534,6 +2534,7 @@ const RAW_RUNTIME_STATE =
           ["@types/files-system__application-module", null],\
           ["@types/files-system__domain-module", null],\
           ["@types/files-system__files-rpc", null],\
+          ["@types/monstrs__nestjs-connectrpc", null],\
           ["@types/monstrs__nestjs-microservices-registry", null],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
@@ -2558,6 +2559,7 @@ const RAW_RUNTIME_STATE =
           "@files-system/application-module",\
           "@files-system/domain-module",\
           "@files-system/files-rpc",\
+          "@monstrs/nestjs-connectrpc",\
           "@monstrs/nestjs-microservices-registry",\
           "@nestjs/common",\
           "@nestjs/core",\
@@ -2571,6 +2573,7 @@ const RAW_RUNTIME_STATE =
           "@types/files-system__application-module",\
           "@types/files-system__domain-module",\
           "@types/files-system__files-rpc",\
+          "@types/monstrs__nestjs-connectrpc",\
           "@types/monstrs__nestjs-microservices-registry",\
           "@types/nestjs__common",\
           "@types/nestjs__core",\
@@ -2653,6 +2656,7 @@ const RAW_RUNTIME_STATE =
           ["@files-system/files-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:rpc/files-rpc"],\
           ["@files-system/infrastructure-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/infrastructure-module"],\
           ["@jest/globals", "npm:29.6.4"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.2"],\
           ["@monstrs/nestjs-gcs-client", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.1.2"],\
           ["@monstrs/nestjs-logger", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.1.0"],\
@@ -4320,10 +4324,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-1dd81fdcd4/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.2-5a4892aa52-c685539141.zip/node_modules/@monstrs/nestjs-connectrpc/",\
+      ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-554cc3009f/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.2-5a4892aa52-c685539141.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
-          ["@monstrs/nestjs-connectrpc", "virtual:14cf3b7498071e8532b6cde0bdb8704b50b1079beb9177a4c8437601e0bb36fccc78bc0841dc4b6849efaf7451c4bccd66b6027de6da760faa97ce97550e99f3#npm:0.0.2"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.0.2"],\
           ["@bufbuild/protobuf", "npm:1.3.1"],\
           ["@connectrpc/connect", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.13.2"],\
           ["@connectrpc/connect-node", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.13.2"],\
