@@ -1436,13 +1436,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bufbuild/protobuf@npm:1.3.0":
-  version: 1.3.0
-  resolution: "@bufbuild/protobuf@npm:1.3.0"
-  checksum: c1a5fdec23a730728cf835a082c5df71f04c233d721eddc1e37cd5cf12d93d2c8df365293190ac999ca0002df398ff5896cb62450bb50e1f30fbeedfa8ee98c9
-  languageName: node
-  linkType: hard
-
 "@bufbuild/protoc-gen-es@npm:^1.3.1":
   version: 1.3.1
   resolution: "@bufbuild/protoc-gen-es@npm:1.3.1"
@@ -1459,18 +1452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bufbuild/protoplugin@npm:1.3.0":
-  version: 1.3.0
-  resolution: "@bufbuild/protoplugin@npm:1.3.0"
-  dependencies:
-    "@bufbuild/protobuf": "npm:1.3.0"
-    "@typescript/vfs": "npm:^1.4.0"
-    typescript: "npm:4.5.2"
-  checksum: cf5b4fe12b7c3429f1095cb28283a098a8de59b979160851ba52f8a2cf58adfd7aa1ecc6631c3bcbc4a41e91f1d9db1329f8d647a603ed617f035bdcfde5e469
-  languageName: node
-  linkType: hard
-
-"@bufbuild/protoplugin@npm:1.3.1, @bufbuild/protoplugin@npm:^1.2.1":
+"@bufbuild/protoplugin@npm:1.3.1, @bufbuild/protoplugin@npm:^1.2.1, @bufbuild/protoplugin@npm:^1.3.1":
   version: 1.3.1
   resolution: "@bufbuild/protoplugin@npm:1.3.1"
   dependencies:
@@ -1688,8 +1670,8 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.3.1"
     "@bufbuild/protoc-gen-es": "npm:^1.3.1"
     "@connectrpc/protoc-gen-connect-es": "npm:^0.13.2"
-    "@monstrs/protoc-gen-abstractions": "npm:^0.0.4"
-    "@monstrs/protoc-gen-interfaces": "npm:^0.0.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
   peerDependencies:
     "@bufbuild/protobuf": ^1
   languageName: unknown
@@ -1752,6 +1734,7 @@ __metadata:
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
     "@files-system/files-rpc": "workspace:0.0.1"
+    "@monstrs/nestjs-connectrpc": ^0.0.2
     "@monstrs/nestjs-microservices-registry": ^0.1.0
     "@nestjs/common": ^10
     "@nestjs/core": ^10
@@ -1777,11 +1760,12 @@ __metadata:
     "@files-system/files-rpc": "workspace:0.0.1"
     "@files-system/infrastructure-module": "workspace:0.0.1"
     "@jest/globals": "npm:^29.6.4"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
     "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
     "@monstrs/nestjs-s3-client": "npm:^0.1.3"
-    "@monstrs/protobuf-rpc": "npm:0.0.6"
+    "@monstrs/protobuf-rpc": "npm:0.0.7"
     "@nestjs/common": "npm:^10.2.4"
     "@nestjs/core": "npm:^10.2.4"
     "@nestjs/cqrs": "npm:^10.2.5"
@@ -2800,7 +2784,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/protobuf-rpc@npm:0.0.6, @monstrs/protobuf-rpc@npm:^0.0.6":
+"@monstrs/protobuf-rpc@npm:0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/protobuf-rpc@npm:0.0.7"
+  peerDependencies:
+    "@bufbuild/protobuf": "*"
+  checksum: 74cef1d7460949fb49fbf935d45efd012bebffdbbd491dfb616c05b9c5bc2e4bfb229a07bdc360a765d4a91bb582d05c3a63cfd3f59e47ee88a17f496bc9dc89
+  languageName: node
+  linkType: hard
+
+"@monstrs/protobuf-rpc@npm:^0.0.6":
   version: 0.0.6
   resolution: "@monstrs/protobuf-rpc@npm:0.0.6"
   peerDependencies:
@@ -2809,35 +2802,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/protoc-gen-abstractions@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@monstrs/protoc-gen-abstractions@npm:0.0.4"
+"@monstrs/protoc-gen-abstractions@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/protoc-gen-abstractions@npm:0.0.5"
   dependencies:
-    "@bufbuild/protoplugin": "npm:1.3.0"
+    "@bufbuild/protoplugin": "npm:^1.3.1"
   peerDependencies:
-    "@bufbuild/protobuf": 1.3.0
+    "@bufbuild/protobuf": ^1
   peerDependenciesMeta:
     "@bufbuild/protobuf":
       optional: true
   bin:
     protoc-gen-abstractions: bin/protoc-gen-abstractions
-  checksum: 8eb5a119d1025cea4694b8e91b16687f47aa2e0ba26e0103fcf27e20a1745ec73630bcda1b3a2798580eb0b3f8d3d8e896b7ffe42cf76bef7e8beaab31db709d
+  checksum: fcb2b3e9d8c196f168ec8c1f5dc9e3b5d476d833e9af5fceceb1256280caec8612b132db5bb86d30594310bafcf04783ab79e5da2a5f653dba7b76fe733c8e9f
   languageName: node
   linkType: hard
 
-"@monstrs/protoc-gen-interfaces@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@monstrs/protoc-gen-interfaces@npm:0.0.3"
+"@monstrs/protoc-gen-interfaces@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@monstrs/protoc-gen-interfaces@npm:0.0.4"
   dependencies:
-    "@bufbuild/protoplugin": "npm:1.3.0"
+    "@bufbuild/protoplugin": "npm:^1.3.1"
   peerDependencies:
-    "@bufbuild/protobuf": 1.3.0
+    "@bufbuild/protobuf": ^1
   peerDependenciesMeta:
     "@bufbuild/protobuf":
       optional: true
   bin:
     protoc-gen-interfaces: bin/protoc-gen-interfaces
-  checksum: 55cd58f6442042b10802bb9a4591e00cc67e51d6eb8cda7b494079bb7036ffc9ee0ed37be0817246b07b8e9d12dff31f6a8eba434ee8b70d7fd2d64644a139f5
+  checksum: d02c45f21ece693b742ee65965defb0c837e45951980e1c3651e83f8024dbd407c64a161a462d02a271df61f07457ae609f8199714bcd5d79b0a8dd98a50463b
   languageName: node
   linkType: hard
 
