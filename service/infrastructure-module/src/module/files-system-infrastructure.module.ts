@@ -1,12 +1,13 @@
 import type { DynamicModule }                          from '@nestjs/common'
 import type { OnModuleInit }                           from '@nestjs/common'
+import type { MikroOrmModuleOptions }                  from '@mikro-orm/nestjs'
 
 import type { FilesSystemInfrastructureModuleOptions } from './files-system-infrastructure.module.interfaces.js'
 
 import { Module }                                      from '@nestjs/common'
 import { MikroOrmModule }                              from '@mikro-orm/nestjs'
 import { MikroORM }                                    from '@mikro-orm/core'
-import { CqrsModule }                                  from '@nestjs/cqrs'
+import { CqrsModule }                                  from '@monstrs/nestjs-cqrs'
 import { MikroORMRequestContextModule }                from '@monstrs/nestjs-mikro-orm-request-context'
 import { PostgreSqlDriver }                            from '@mikro-orm/postgresql'
 import { MikroORMConfigModule }                        from '@monstrs/nestjs-mikro-orm-config'
@@ -19,6 +20,7 @@ import { GcsClientFactory }                            from '@monstrs/nestjs-gcs
 import { ConnectRpcServer }                            from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }                              from '@monstrs/nestjs-connectrpc'
 import { MicroservisesRegistryModule }                 from '@monstrs/nestjs-microservices-registry'
+import { CqrsKafkaEventsModule }                       from '@monstrs/nestjs-cqrs-kafka-events'
 
 import { UploadRepository }                            from '@files-system/domain-module'
 import { FileRepository }                              from '@files-system/domain-module'
@@ -34,29 +36,34 @@ import { FileRepositoryImpl }                          from '../repositories/ind
 import { S3FilesStorageAdapterImpl }                   from '../ports/index.js'
 import { GcsFilesStorageAdapterImpl }                  from '../ports/index.js'
 import { EnvFilesBucketsAdapterImpl }                  from '../ports/index.js'
-import { FILES_STORAGE_PROVIDER }                      from './files-system-infrastructure.module.contants.js'
+import { FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS }  from './files-system-infrastructure.module.contants.js'
+import { FilesSystemInfrastructureModuleConfig }       from './files-system-infrastructure.module.config.js'
 
 @Module({})
 export class FilesSystemInfrastructureModule implements OnModuleInit {
   constructor(private readonly orm: MikroORM) {}
 
-  static register(options?: FilesSystemInfrastructureModuleOptions): DynamicModule {
+  static register(options: FilesSystemInfrastructureModuleOptions = {}): DynamicModule {
     const providers = [
       {
-        provide: FILES_STORAGE_PROVIDER,
-        useValue: options?.storage || process.env.FILES_STORAGE_PROVIDER,
+        provide: FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS,
+        useValue: options,
+      },
+      {
+        provide: FilesSystemInfrastructureModuleConfig,
+        useClass: FilesSystemInfrastructureModuleConfig,
       },
       {
         provide: FilesStorageAdapter,
         useFactory: (
-          storage: FilesSystemInfrastructureModuleOptions['storage'],
+          config: FilesSystemInfrastructureModuleConfig,
           s3ClientFactory: S3ClientFactory,
           googleStorageFactory: GcsClientFactory
         ): FilesStorageAdapter =>
-          storage === 'gcs'
+          config.storage === 'gcs'
             ? new GcsFilesStorageAdapterImpl(googleStorageFactory.create())
             : new S3FilesStorageAdapterImpl(s3ClientFactory.create()),
-        inject: [FILES_STORAGE_PROVIDER, S3ClientFactory, GcsClientFactory],
+        inject: [FilesSystemInfrastructureModuleConfig, S3ClientFactory, GcsClientFactory],
       },
       {
         provide: FilesBucketsAdapter,
@@ -77,12 +84,15 @@ export class FilesSystemInfrastructureModule implements OnModuleInit {
       module: FilesSystemInfrastructureModule,
       controllers: Object.values(controllers),
       imports: [
+        MikroORMRequestContextModule.forInterceptor(),
         MicroservisesRegistryModule.connect({
           strategy: new ConnectRpcServer({
             protocol: ServerProtocol.HTTP2_INSECURE,
             port: 50051,
           }),
         }),
+        ValidationModule.register(),
+        CqrsModule.forRoot(),
         MikroOrmModule.forFeature(Object.values(entities)),
         MikroOrmModule.forRootAsync({
           imports: [
@@ -93,13 +103,25 @@ export class FilesSystemInfrastructureModule implements OnModuleInit {
               entities,
             }),
           ],
-          useExisting: MikroORMConfig,
+          useFactory: (mikroORMConfig: MikroORMConfig, config): MikroOrmModuleOptions =>
+            ({
+              ...mikroORMConfig.createMikroOrmOptions(),
+              ...config.db,
+            }) as MikroOrmModuleOptions,
+          inject: [MikroORMConfig, FilesSystemInfrastructureModuleConfig],
         }),
-        MikroORMRequestContextModule.forInterceptor(),
-        ValidationModule.register(),
-        GcsClientModule.register(),
-        S3ClientModule.register(),
-        CqrsModule.forRoot(),
+        CqrsKafkaEventsModule.registerAsync({
+          useFactory: (config: FilesSystemInfrastructureModuleConfig) => config.events,
+          inject: [FilesSystemInfrastructureModuleConfig],
+        }),
+        GcsClientModule.registerAsync({
+          useFactory: (config: FilesSystemInfrastructureModuleConfig) => config.gcs,
+          inject: [FilesSystemInfrastructureModuleConfig],
+        }),
+        S3ClientModule.registerAsync({
+          useFactory: (config: FilesSystemInfrastructureModuleConfig) => config.s3,
+          inject: [FilesSystemInfrastructureModuleConfig],
+        }),
       ],
       providers: [...Object.values(mappers), ...providers],
       exports: [...providers],

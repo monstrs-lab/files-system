@@ -68,7 +68,9 @@ export class S3FilesStorageAdapterImpl extends FilesStorageAdapter {
       )
     } catch (error) {
       if (error instanceof Error) {
-        this.#logger.error(error)
+        if ((error as any)?.$metadata?.httpStatusCode !== 404) {
+          this.#logger.error(error)
+        }
       }
 
       return undefined
