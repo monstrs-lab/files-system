@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@monstrs/tools-runtime": "^0.2.15",
-    "@types/node": "^20.5.8",
+    "@types/node": "^20.5.9",
     "typescript": "^5.2.2"
   },
   "packageManager": "yarn@3.6.1",

@@ -1,1 +1,3 @@
-export const FILES_STORAGE_PROVIDER = Symbol('files-storage-provider')
+export const FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS = Symbol(
+  'files-system-infrastructure-module-options'
+)

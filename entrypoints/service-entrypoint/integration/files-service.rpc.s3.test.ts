@@ -1,51 +1,53 @@
-import type { INestMicroservice }               from '@nestjs/common'
-import type { StartedTestContainer }            from 'testcontainers'
-import type { PromiseClient }                   from '@connectrpc/connect'
+import type { INestMicroservice }                     from '@nestjs/common'
+import type { StartedTestContainer }                  from 'testcontainers'
+import type { PromiseClient }                         from '@connectrpc/connect'
+import type { StartedKafkaContainer }                 from '@testcontainers/kafka'
 
-import { fileURLToPath }                        from 'node:url'
-import { join }                                 from 'node:path'
-import { createReadStream }                     from 'node:fs'
+import { fileURLToPath }                              from 'node:url'
+import { join }                                       from 'node:path'
+import { createReadStream }                           from 'node:fs'
 
-import { S3_CLIENT_ENDPOINT }                   from '@monstrs/nestjs-s3-client'
-import { S3_CLIENT_REGION }                     from '@monstrs/nestjs-s3-client'
-import { S3_CLIENT_CREDENTIALS }                from '@monstrs/nestjs-s3-client'
-import { Test }                                 from '@nestjs/testing'
-import { ConnectRpcServer }                     from '@monstrs/nestjs-connectrpc'
-import { ServerProtocol }                       from '@monstrs/nestjs-connectrpc'
-import { ConnectError }                         from '@connectrpc/connect'
-import { describe }                             from '@jest/globals'
-import { afterAll }                             from '@jest/globals'
-import { beforeAll }                            from '@jest/globals'
-import { expect }                               from '@jest/globals'
-import { it }                                   from '@jest/globals'
-import { faker }                                from '@faker-js/faker'
-import { createPromiseClient }                  from '@connectrpc/connect'
-import { createGrpcTransport }                  from '@connectrpc/connect-node'
-import { GenericContainer }                     from 'testcontainers'
-import { Wait }                                 from 'testcontainers'
-import getPort                                  from 'get-port'
-import fetch                                    from 'node-fetch'
+import { KafkaContainer }                             from '@testcontainers/kafka'
+import { Test }                                       from '@nestjs/testing'
+import { ConnectError }                               from '@connectrpc/connect'
+import { describe }                                   from '@jest/globals'
+import { afterAll }                                   from '@jest/globals'
+import { beforeAll }                                  from '@jest/globals'
+import { expect }                                     from '@jest/globals'
+import { it }                                         from '@jest/globals'
+import { faker }                                      from '@faker-js/faker'
+import { createPromiseClient }                        from '@connectrpc/connect'
+import { createGrpcTransport }                        from '@connectrpc/connect-node'
+import { GenericContainer }                           from 'testcontainers'
+import { Wait }                                       from 'testcontainers'
+import getPort                                        from 'get-port'
+import fetch                                          from 'node-fetch'
 
-import { FilesService }                         from '@files-system/files-rpc/connect'
-import { FilesBucketsAdapter }                  from '@files-system/domain-module'
-import { FilesBucketSizeConditions }            from '@files-system/domain-module'
-import { FilesBucketConditions }                from '@files-system/domain-module'
-import { FilesBucketType }                      from '@files-system/domain-module'
-import { FilesBucket }                          from '@files-system/domain-module'
-import { MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT } from '@files-system/infrastructure-module'
-import { StaticFilesBucketsAdapterImpl }        from '@files-system/infrastructure-module'
+import { ConnectRpcServer }                           from '@files-system/infrastructure-module'
+import { ServerProtocol }                             from '@files-system/infrastructure-module'
+import { FilesService }                               from '@files-system/files-rpc/connect'
+import { FilesBucketsAdapter }                        from '@files-system/domain-module'
+import { FilesBucketSizeConditions }                  from '@files-system/domain-module'
+import { FilesBucketConditions }                      from '@files-system/domain-module'
+import { FilesBucketType }                            from '@files-system/domain-module'
+import { FilesBucket }                                from '@files-system/domain-module'
+import { StaticFilesBucketsAdapterImpl }              from '@files-system/infrastructure-module'
+import { FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS } from '@files-system/infrastructure-module'
 
-import { FilesSystemServiceEntrypointModule }   from '../src/files-system-service-entrypoint.module.js'
+import { FilesSystemServiceEntrypointModule }         from '../src/files-system-service-entrypoint.module.js'
 
 describe('files-service', () => {
   describe('rpc', () => {
     describe('s3', () => {
       let postgres: StartedTestContainer
+      let kafka: StartedKafkaContainer
       let service: INestMicroservice
       let storage: StartedTestContainer
       let client: PromiseClient<typeof FilesService>
 
       beforeAll(async () => {
+        kafka = await new KafkaContainer().withExposedPorts(9093).start()
+
         postgres = await new GenericContainer('bitnami/postgresql')
           .withWaitStrategy(Wait.forLogMessage('database system is ready to accept connections'))
           .withEnvironment({
@@ -77,19 +79,24 @@ describe('files-service', () => {
         const testingModule = await Test.createTestingModule({
           imports: [FilesSystemServiceEntrypointModule],
         })
-          .overrideProvider(MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT)
-          .useValue(postgres.getMappedPort(5432))
-          .overrideProvider(S3_CLIENT_ENDPOINT)
-          .useValue(`http://localhost:${storage.getMappedPort(9000)}`)
-          .overrideProvider(S3_CLIENT_REGION)
-          .useValue('eu-central-1')
-          .overrideProvider(S3_CLIENT_CREDENTIALS)
+          .overrideProvider(FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS)
           .useValue({
-            accessKeyId: 'accesskey',
-            secretAccessKey: 'secretkey',
+            storage: 's3',
+            db: {
+              port: postgres.getMappedPort(5432),
+            },
+            events: {
+              brokers: [`${kafka.getHost()}:${kafka.getMappedPort(9093)}`],
+            },
+            s3: {
+              endpoint: `http://localhost:${storage.getMappedPort(9000)}`,
+              region: 'eu-central-1',
+              credentials: {
+                accessKeyId: 'accesskey',
+                secretAccessKey: 'secretkey',
+              },
+            },
           })
-          .overrideProvider(MIKRO_ORM_CONFIG_MODULE_OPTIONS_PORT)
-          .useValue(postgres.getMappedPort(5432))
           .overrideProvider(FilesBucketsAdapter)
           .useValue(
             new StaticFilesBucketsAdapterImpl([
@@ -127,6 +134,7 @@ describe('files-service', () => {
         await service.close()
         await postgres.stop()
         await storage.stop()
+        await kafka.stop()
       })
 
       describe('uploads', () => {

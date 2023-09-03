@@ -1635,7 +1635,7 @@ __metadata:
     "@nestjs/core": "npm:^10.2.4"
     "@nestjs/cqrs": "npm:^10.2.5"
     "@nestjs/testing": "npm:^10.2.4"
-    "@types/node": "npm:^20.5.8"
+    "@types/node": "npm:^20.5.9"
     "@types/uuid": "npm:^9.0.3"
     reflect-metadata: "npm:^0.1.13"
     rxjs: "npm:^7.8.1"
@@ -1664,7 +1664,7 @@ __metadata:
     "@nestjs/cqrs": "npm:^10.2.5"
     "@nestjs/testing": "npm:^10.2.4"
     "@types/mime-types": "npm:^2.1.1"
-    "@types/node": "npm:^20.5.8"
+    "@types/node": "npm:^20.5.9"
     "@types/uuid": "npm:^9.0.3"
     mime-match: "npm:^1.0.2"
     mime-types: "npm:^2.1.35"
@@ -1720,11 +1720,13 @@ __metadata:
     "@monstrs/mikro-orm-query-builder": "npm:^0.0.9"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.2"
-    "@monstrs/nestjs-gcs-client": "npm:^0.1.1"
+    "@monstrs/nestjs-cqrs": "npm:^0.0.3"
+    "@monstrs/nestjs-cqrs-kafka-events": "npm:^0.0.2"
+    "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
     "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.2"
     "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.1"
-    "@monstrs/nestjs-s3-client": "npm:^0.1.2"
+    "@monstrs/nestjs-s3-client": "npm:^0.1.3"
     "@monstrs/nestjs-validation": "npm:^0.1.1"
     "@monstrs/rpc-query-payloads": "npm:^0.0.11"
     "@nestjs/common": "npm:^10.2.4"
@@ -1734,7 +1736,7 @@ __metadata:
     "@nestjs/platform-express": "npm:^10.2.4"
     "@nestjs/testing": "npm:^10.2.4"
     "@types/express": "npm:^4.17.17"
-    "@types/node": "npm:^20.5.8"
+    "@types/node": "npm:^20.5.9"
     "@types/uuid": "npm:^9.0.3"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
@@ -1749,7 +1751,6 @@ __metadata:
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
     "@files-system/files-rpc": "workspace:0.0.1"
-    "@monstrs/nestjs-microservices-registry": ^0.1.0
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/cqrs": ^10
@@ -1774,11 +1775,9 @@ __metadata:
     "@files-system/files-rpc": "workspace:0.0.1"
     "@files-system/infrastructure-module": "workspace:0.0.1"
     "@jest/globals": "npm:^29.6.4"
-    "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
-    "@monstrs/nestjs-gcs-client": "npm:^0.1.1"
+    "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
-    "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
-    "@monstrs/nestjs-s3-client": "npm:^0.1.2"
+    "@monstrs/nestjs-s3-client": "npm:^0.1.3"
     "@monstrs/protobuf-rpc": "npm:0.0.6"
     "@nestjs/common": "npm:^10.2.4"
     "@nestjs/core": "npm:^10.2.4"
@@ -1788,7 +1787,8 @@ __metadata:
     "@nestjs/platform-socket.io": "npm:^10.2.4"
     "@nestjs/testing": "npm:^10.2.4"
     "@nestjs/websockets": "npm:^10.2.4"
-    "@types/node": "npm:^20.5.8"
+    "@testcontainers/kafka": "npm:^10.2.1"
+    "@types/node": "npm:^20.5.9"
     "@types/pg": "npm:^8.10.2"
     cache-manager: "npm:^5.2.3"
     class-transformer: "npm:^0.5.1"
@@ -2651,9 +2651,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/nestjs-gcs-client@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@monstrs/nestjs-gcs-client@npm:0.1.1"
+"@monstrs/nestjs-cqrs-kafka-events@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/nestjs-cqrs-kafka-events@npm:0.0.2"
+  dependencies:
+    "@monstrs/nestjs-kafka": "npm:0.0.3"
+    telejson: "npm:^7.2.0"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  checksum: 938db607274e47290a7f0f36e9447339c84163614442e5191f9d36f72c4fefe27da7403e6220a8480f6ed7b1d01efe744e6a2150c3bc593a6994216b209b482a
+  languageName: node
+  linkType: hard
+
+"@monstrs/nestjs-cqrs@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@monstrs/nestjs-cqrs@npm:0.0.3"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  checksum: 22a740853a2a9e456e29047141c7ffa68635992b6c055e8c72d63cbe83251162ca4079b649aebf5a9c9d1f3cfb2e85dd00349f4e9298e5720b3c0228cddea5d6
+  languageName: node
+  linkType: hard
+
+"@monstrs/nestjs-gcs-client@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@monstrs/nestjs-gcs-client@npm:0.1.2"
   dependencies:
     "@google-cloud/storage": "npm:^7.0.1"
   peerDependencies:
@@ -2661,7 +2690,21 @@ __metadata:
     "@nestjs/core": ^10
     reflect-metadata: ^0.1
     rxjs: ^7
-  checksum: 76d420b7e93c9ee20d062793902c5c666cab12164bc9d860e95c8d5cd93da9599f1fe370b0644a6ac50b33e91fcd21eeef55b4fb0e613c769809c25dcfcc8111
+  checksum: f5aa3d6cce1f457dc1a57be3db00609b9085e16611ab500f2cb8b13f7753f6eda2ca06253d9c1e7ee3dc1cd350777dc9662ad75c87e0ab51b143aff809ddeab7
+  languageName: node
+  linkType: hard
+
+"@monstrs/nestjs-kafka@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@monstrs/nestjs-kafka@npm:0.0.3"
+  dependencies:
+    kafkajs: "npm:^2.2.4"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  checksum: e8ed1f1950c195015b74ed771e6990bb307745fb09e387e7c367aa01d39d755a8b6f6712d126864402083157c530aaceb1ba073e2099a8bd1c02173ae4aa8ed9
   languageName: node
   linkType: hard
 
@@ -2723,9 +2766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/nestjs-s3-client@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "@monstrs/nestjs-s3-client@npm:0.1.2"
+"@monstrs/nestjs-s3-client@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@monstrs/nestjs-s3-client@npm:0.1.3"
   dependencies:
     "@aws-sdk/client-s3": "npm:^3.363.0"
     "@aws-sdk/credential-providers": "npm:^3.363.0"
@@ -2736,7 +2779,7 @@ __metadata:
     "@nestjs/core": ^10
     reflect-metadata: ^0.1
     rxjs: ^7
-  checksum: 664ffd5239bc38493678e8bf389416157a96086df4a8dd9dc09967d14e34aec7915c28d5308792302163f88ad0014b16741864d99e57b563eef293e918c71e89
+  checksum: 52cde8cae9f4a63bdfec15bd8de10c95eb512856c357c7ebe4665b11f3535407c034cb758ec1ec7c18cff9775061b9a75af23dd72266e11b949e889a44b1c752
   languageName: node
   linkType: hard
 
@@ -3920,6 +3963,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testcontainers/kafka@npm:^10.2.1":
+  version: 10.2.1
+  resolution: "@testcontainers/kafka@npm:10.2.1"
+  dependencies:
+    testcontainers: "npm:^10.2.1"
+  checksum: fb02282da8a48280ce50834ee949ef7e3ee8e6bc339aba533555494f73904556af38b6715498368f073ddb16df3359e96e2e671ff6f7ae1caace9be23244cb59
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -4185,7 +4237,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^20.5.8":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
   version: 20.5.8
   resolution: "@types/node@npm:20.5.8"
   checksum: 5d4af299b4499c4658d5fed3475ad1039828c5a8a44cd15494d45d8d1097965b59246f140af43a9e94277007082e8d04bc4f7771a4b97a8292ffd7442240cffd
@@ -4196,6 +4248,13 @@ __metadata:
   version: 18.17.11
   resolution: "@types/node@npm:18.17.11"
   checksum: 77e2d7c597f2746d120a97b46423f4b27aab996e55b934e15dd2ea3fd1f79df7bc45963129c73aa217cdff4e570ca8ee0f68ad16129cc20e42246e498f90f703
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.5.9":
+  version: 20.5.9
+  resolution: "@types/node@npm:20.5.9"
+  checksum: a071a19019b4045ba65cbacb3a24fcdf1ef41474fd15fb160a082a4c7aba7643b69c5d681637d2b0ce081f2127ce4332ea4d8bf007595efe8e82ba795872c7d0
   languageName: node
   linkType: hard
 
@@ -7039,7 +7098,7 @@ __metadata:
   resolution: "files-system@workspace:."
   dependencies:
     "@monstrs/tools-runtime": "npm:^0.2.15"
-    "@types/node": "npm:^20.5.8"
+    "@types/node": "npm:^20.5.9"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -8791,7 +8850,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kafkajs@npm:*":
+"kafkajs@npm:*, kafkajs@npm:^2.2.4":
   version: 2.2.4
   resolution: "kafkajs@npm:2.2.4"
   checksum: 6eece1f682a257955f647b6142430e87681d11bf01e9ebe0a73b4bc0653b8f970c48ba72a3b25fdbb4205cfbb36e5ef93d954b8f8c5f7767ae2b4693bdec9d88
@@ -9169,10 +9228,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-or-similar@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "map-or-similar@npm:1.5.0"
+  checksum: 33c6ccfdc272992e33e4e99a69541a3e7faed9de3ac5bc732feb2500a9ee71d3f9d098980a70b7746e7eeb7f859ff7dfb8aa9b5ecc4e34170a32ab78cfb18def
+  languageName: node
+  linkType: hard
+
 "media-typer@npm:0.3.0":
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
   checksum: d160f31246907e79fed398470285f21bafb45a62869dc469b1c8877f3f064f5eabc4bcc122f9479b8b605bc5c76187d7871cf84c4ee3ecd3e487da1993279928
+  languageName: node
+  linkType: hard
+
+"memoizerific@npm:^1.11.3":
+  version: 1.11.3
+  resolution: "memoizerific@npm:1.11.3"
+  dependencies:
+    map-or-similar: "npm:^1.5.0"
+  checksum: 661bf69b7afbfad57f0208f0c63324f4c96087b480708115b78ee3f0237d86c7f91347f6db31528740b2776c2e34c709bcb034e1e910edee2270c9603a0a469e
   languageName: node
   linkType: hard
 
@@ -11445,6 +11520,15 @@ __metadata:
     stream-events: "npm:^1.0.5"
     uuid: "npm:^9.0.0"
   checksum: 1c51a284075b57b7b7f970fc8d855d611912f0e485aa1d1dfda3c0be3f2df392e4ce83b1b39877134041abb7c255f3777f175b27323ef5bf008839e42a1958bc
+  languageName: node
+  linkType: hard
+
+"telejson@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "telejson@npm:7.2.0"
+  dependencies:
+    memoizerific: "npm:^1.11.3"
+  checksum: d26e6cc93e54bfdcdb207b49905508c5db45862e811a2e2193a735409e47b14530e1c19351618a3e03ad2fd4ffc3759364fcd72851aba2df0300fab574b6151c
   languageName: node
   linkType: hard
 
