@@ -1669,11 +1669,11 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.3.1"
     "@connectrpc/connect": "npm:^0.13.2"
     "@connectrpc/connect-node": "npm:^0.13.2"
-    "@files-system/files-rpc": "workspace:0.0.1"
+    "@files-system/files-rpc": "workspace:0.0.2"
   languageName: unknown
   linkType: soft
 
-"@files-system/files-rpc@workspace:0.0.1, @files-system/files-rpc@workspace:rpc/files-rpc":
+"@files-system/files-rpc@workspace:0.0.2, @files-system/files-rpc@workspace:rpc/files-rpc":
   version: 0.0.0-use.local
   resolution: "@files-system/files-rpc@workspace:rpc/files-rpc"
   dependencies:
@@ -1698,7 +1698,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.0.2"
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
-    "@files-system/files-rpc": "workspace:0.0.1"
+    "@files-system/files-rpc": "workspace:0.0.2"
     "@jest/globals": "npm:^29.6.4"
     "@mikro-orm/cli": "npm:^5.7.14"
     "@mikro-orm/core": "npm:^5.7.14"
@@ -1744,7 +1744,7 @@ __metadata:
     "@connectrpc/connect-node": ^0.13
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
-    "@files-system/files-rpc": "workspace:0.0.1"
+    "@files-system/files-rpc": "workspace:0.0.2"
     "@monstrs/nestjs-connectrpc": ^0.0.2
     "@monstrs/nestjs-microservices-registry": ^0.1.0
     "@nestjs/common": ^10
@@ -1768,7 +1768,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.0.2"
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
-    "@files-system/files-rpc": "workspace:0.0.1"
+    "@files-system/files-rpc": "workspace:0.0.2"
     "@files-system/infrastructure-module": "workspace:0.0.1"
     "@jest/globals": "npm:^29.6.4"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
