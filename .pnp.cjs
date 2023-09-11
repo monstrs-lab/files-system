@@ -22,6 +22,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:rpc/files-rpc"\
     },\
     {\
+      "name": "@files-system/files-rpc-client",\
+      "reference": "workspace:rpc/files-rpc-client"\
+    },\
+    {\
       "name": "@files-system/application-module",\
       "reference": "workspace:service/application-module"\
     },\
@@ -40,6 +44,7 @@ const RAW_RUNTIME_STATE =
     ["@files-system/application-module", ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/application-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/application-module", "workspace:service/application-module"]],\
     ["@files-system/domain-module", ["virtual:04d2374e5d242dac075acbdcfcc956d6c9361f1ef894d5e95819d0755dfd7dab6662251490e913c29ba41fcec006e0943e21e36f4f2894b8d525a53300d54eeb#workspace:service/domain-module", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/domain-module", "virtual:9ccc3f409d36e308a8457609f38d197416699b166df527ddbb19efe4ccc579fb04fdd9c8c128f5f7f74744ba25efed3b6c96c45ce4c98064895cbadceff78688#workspace:service/domain-module", "workspace:service/domain-module"]],\
     ["@files-system/files-rpc", ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:rpc/files-rpc", "workspace:rpc/files-rpc"]],\
+    ["@files-system/files-rpc-client", ["workspace:rpc/files-rpc-client"]],\
     ["@files-system/infrastructure-module", ["virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:service/infrastructure-module", "workspace:service/infrastructure-module"]],\
     ["@files-system/service-entrypoint", ["workspace:entrypoints/service-entrypoint"]],\
     ["files-system", ["workspace:."]]\
@@ -2463,6 +2468,19 @@ const RAW_RUNTIME_STATE =
           ["@connectrpc/protoc-gen-connect-es", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.13.2"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:7ff066ce84faec0b2711befdc17804ecf49ac3e7f671dd3da7bd9bc5f08bd8f92694dadcd2d206fb02f2c7af3eb6f1940fd38436cee2333f58d7894c2ae364fd#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@files-system/files-rpc-client", [\
+      ["workspace:rpc/files-rpc-client", {\
+        "packageLocation": "./rpc/files-rpc-client/",\
+        "packageDependencies": [\
+          ["@files-system/files-rpc-client", "workspace:rpc/files-rpc-client"],\
+          ["@bufbuild/protobuf", "npm:1.3.1"],\
+          ["@connectrpc/connect", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.13.2"],\
+          ["@connectrpc/connect-node", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#npm:0.13.2"],\
+          ["@files-system/files-rpc", "virtual:2d35940a5a12714d74e9e44b660448fba7373d1ea73a48153df5037e3cfe1d794be0378ed4112d14c12215b8f5d5c4384ccabce219ba1e38ed76d11f4c0dcd4c#workspace:rpc/files-rpc"]\
         ],\
         "linkType": "SOFT"\
       }]\
