@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tech.monstrs.filessystem.v1alpha1;
+package tech.monstrs.files_system.v1alpha1;
 
 import "tech/monstrs/queries/v1alpha1/queries.proto";
 

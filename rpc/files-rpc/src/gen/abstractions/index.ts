@@ -1,1 +1,1 @@
-export * from './tech/monstrs/filessystem/files/v1alpha1/files.service_pb.js'
+export * from './tech/monstrs/files_system/v1alpha1/files.service_pb.js'
