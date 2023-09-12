@@ -1758,9 +1758,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@files-system/service-entrypoint@workspace:entrypoints/service-entrypoint":
+"@files-system/service-entrypoint@workspace:service/service-entrypoint":
   version: 0.0.0-use.local
-  resolution: "@files-system/service-entrypoint@workspace:entrypoints/service-entrypoint"
+  resolution: "@files-system/service-entrypoint@workspace:service/service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.3.1"
     "@connectrpc/connect": "npm:^0.13.2"

@@ -49,5 +49,5 @@
     "outDir": "./dist",
     "noImplicitOverride": true
   },
-  "include": ["project.types.d.ts", "entrypoints/**/*", "service/**/*", "rpc/**/*"]
+  "include": ["project.types.d.ts", "service/**/*", "rpc/**/*"]
 }
