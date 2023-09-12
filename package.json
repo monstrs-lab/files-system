@@ -7,15 +7,14 @@
     "rpc/*"
   ],
   "resolutions": {
-    "pg": "8.10.0",
-    "typescript": "5.1.6"
+    "pg": "8.10.0"
   },
   "devDependencies": {
-    "@monstrs/tools-runtime": "^0.2.15",
-    "@types/node": "^20.5.9",
+    "@monstrs/tools-runtime": "^0.2.16",
+    "@types/node": "^20.6.0",
     "typescript": "^5.2.2"
   },
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@3.6.3",
   "tools": {
     "schematic": {
       "collection": "@monstrs/schematics",
