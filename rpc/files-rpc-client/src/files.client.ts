@@ -10,7 +10,7 @@ export const createClient = (options = {}): PromiseClient<typeof FilesService> =
     FilesService,
     createGrpcTransport({
       httpVersion: '2',
-      baseUrl: process.env.PUBLICATIONS_SERVICE_URL || 'http://0.0.0.0:50051',
+      baseUrl: process.env.FILES_SERVICE_URL || 'http://0.0.0.0:50051',
       ...options,
     })
   )
