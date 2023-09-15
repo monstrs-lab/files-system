@@ -51,8 +51,8 @@ export class EnvFilesBucketsAdapterImpl extends FilesBucketsAdapter {
 
   protected static getBucketConditions(scope: string): FilesBucketConditions {
     const type = this.getValueFromEnv(scope, 'conditions', 'type')
-    const min = Number(this.getValueFromEnv(scope, 'conditions', 'length', 'min'))
-    const max = Number(this.getValueFromEnv(scope, 'conditions', 'length', 'max'))
+    const min = Number(this.getValueFromEnv(scope, 'conditions', 'size', 'min'))
+    const max = Number(this.getValueFromEnv(scope, 'conditions', 'size', 'max'))
 
     return FilesBucketConditions.create(type!, FilesBucketSizeConditions.create(min, max))
   }
