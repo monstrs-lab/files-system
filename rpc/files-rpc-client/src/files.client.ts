@@ -5,7 +5,7 @@ import { createGrpcTransport } from '@connectrpc/connect-node'
 
 import { FilesService }        from '@files-system/files-rpc/connect'
 
-export const createFilesClient = (options = {}): PromiseClient<typeof FilesService> =>
+export const createClient = (options = {}): PromiseClient<typeof FilesService> =>
   createPromiseClient(
     FilesService,
     createGrpcTransport({
@@ -15,4 +15,4 @@ export const createFilesClient = (options = {}): PromiseClient<typeof FilesServi
     })
   )
 
-export const files = createFilesClient()
+export const client = createClient()
