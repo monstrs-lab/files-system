@@ -1,7 +1,7 @@
+import type { MikroOrmModuleOptions }        from '@mikro-orm/nestjs'
 import type { CqrsKafkaEventsModuleOptions } from '@monstrs/nestjs-cqrs-kafka-events'
 import type { GcsClientModuleOptions }       from '@monstrs/nestjs-gcs-client'
 import type { S3ClientModuleOptions }        from '@monstrs/nestjs-s3-client'
-import type { MikroOrmModuleOptions }        from '@mikro-orm/nestjs'
 
 export interface FilesSystemInfrastructureModuleOptions {
   storage?: 'gcs' | 's3'

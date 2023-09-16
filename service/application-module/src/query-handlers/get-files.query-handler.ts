@@ -1,5 +1,5 @@
-import type { IQueryHandler }          from '@nestjs/cqrs'
 import type { FindFilesByQueryResult } from '@files-system/domain-module'
+import type { IQueryHandler }          from '@nestjs/cqrs'
 
 import { QueryHandler }                from '@nestjs/cqrs'
 
