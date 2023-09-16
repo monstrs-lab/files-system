@@ -1,6 +1,6 @@
-import { AggregateRoot }    from '@nestjs/cqrs'
 import { Guard }            from '@monstrs/guard-clause'
 import { Against }          from '@monstrs/guard-clause'
+import { AggregateRoot }    from '@nestjs/cqrs'
 
 import { FilesBucketType }  from '../enums/index.js'
 import { FileCreatedEvent } from '../events/index.js'

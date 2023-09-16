@@ -4,14 +4,14 @@ import type { FindFilesByQuery }                    from '@files-system/domain-m
 import type { RecordMetadata }                      from '@monstrs/nestjs-cqrs-kafka-events'
 import type { IEvent }                              from '@nestjs/cqrs'
 
+import { EntityRepository }                         from '@mikro-orm/core'
+import { EntityManager }                            from '@mikro-orm/core'
+import { InjectRepository }                         from '@mikro-orm/nestjs'
+import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
+import { MikroORMQueryBuilder }                     from '@monstrs/mikro-orm-query-builder'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
 import { EventBus }                                 from '@nestjs/cqrs'
-import { MikroORMQueryBuilder }                     from '@monstrs/mikro-orm-query-builder'
-import { InjectRepository }                         from '@mikro-orm/nestjs'
-import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
-import { EntityRepository }                         from '@mikro-orm/core'
-import { EntityManager }                            from '@mikro-orm/core'
 
 import { FileRepository }                           from '@files-system/domain-module'
 

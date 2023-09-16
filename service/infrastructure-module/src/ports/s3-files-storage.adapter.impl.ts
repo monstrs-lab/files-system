@@ -4,11 +4,11 @@ import { join }                from 'node:path'
 import { relative }            from 'node:path'
 
 import { Logger }              from '@monstrs/logger'
-import { Injectable }          from '@nestjs/common'
 import { S3Client }            from '@monstrs/nestjs-s3-client'
 import { PutObjectCommand }    from '@monstrs/nestjs-s3-client'
 import { HeadObjectCommand }   from '@monstrs/nestjs-s3-client'
 import { GetObjectCommand }    from '@monstrs/nestjs-s3-client'
+import { Injectable }          from '@nestjs/common'
 import { getSignedUrl }        from '@monstrs/nestjs-s3-client'
 
 import { FilesStorageAdapter } from '@files-system/domain-module'

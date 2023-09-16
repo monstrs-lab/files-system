@@ -4,8 +4,8 @@ import { join }                from 'node:path'
 import { relative }            from 'node:path'
 
 import { Logger }              from '@monstrs/logger'
-import { Injectable }          from '@nestjs/common'
 import { Storage }             from '@monstrs/nestjs-gcs-client'
+import { Injectable }          from '@nestjs/common'
 
 import { FilesStorageAdapter } from '@files-system/domain-module'
 import { StorageFileMetadata } from '@files-system/domain-module'
