@@ -2470,9 +2470,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/config-eslint@npm:0.3.11":
-  version: 0.3.11
-  resolution: "@monstrs/config-eslint@npm:0.3.11"
+"@monstrs/config-eslint@npm:0.3.12":
+  version: 0.3.12
+  resolution: "@monstrs/config-eslint@npm:0.3.12"
   dependencies:
     "@monstrs/config-prettier": "npm:0.4.4"
     "@next/eslint-plugin-next": "npm:^13.4.19"
@@ -2492,7 +2492,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 6c6acf876eb6825115eb93504e9e2336468b3302b5e1a42bfd1139bd923071f7edfa89b23ca4dd3b6ab9c6a2f2272e322af1e570e3015a04af89d69ce74ef269
+  checksum: 97da84713de7d9a73c5e328c6c1d4c68d3067ce57051f4859ac190f701d38ed7e5112948c64511ea6ce2f26c2f9b6b865488aca0efb602b2efbaae14d64646df
   languageName: node
   linkType: hard
 
@@ -2878,12 +2878,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/tools-runtime@npm:^0.2.16":
-  version: 0.2.16
-  resolution: "@monstrs/tools-runtime@npm:0.2.16"
+"@monstrs/tools-runtime@npm:^0.2.17":
+  version: 0.2.17
+  resolution: "@monstrs/tools-runtime@npm:0.2.17"
   dependencies:
     "@jest/core": "npm:^29.7.0"
-    "@monstrs/config-eslint": "npm:0.3.11"
+    "@monstrs/config-eslint": "npm:0.3.12"
     "@monstrs/config-jest": "npm:0.3.11"
     "@svgr/core": "npm:^8.1.0"
     "@svgr/plugin-jsx": "npm:^8.1.0"
@@ -2892,7 +2892,7 @@ __metadata:
     ts-loader: "npm:^9.4.4"
     typescript: "npm:^5.2.2"
     webpack: "npm:^5.88.2"
-  checksum: e58817efe43959b10b095b0cfcd974834b5f08b9435bd0975e4927b57581f4fd80585d7817106f45884d0045efd4b1e8ccde0f1182328e998381bb3ff6f19aff
+  checksum: 7c2a2960ac3187e00aea4e7bca1c3b3f0c9de2bb7df6b7786e3c722f2070f35f4349292b8a7e1542f79eef23761ae321b66b3997f27b4e44062fa3ee6035bd1b
   languageName: node
   linkType: hard
 
@@ -7213,7 +7213,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "files-system@workspace:."
   dependencies:
-    "@monstrs/tools-runtime": "npm:^0.2.16"
+    "@monstrs/tools-runtime": "npm:^0.2.17"
     "@types/node": "npm:^20.6.0"
     typescript: "npm:^5.2.2"
   languageName: unknown
