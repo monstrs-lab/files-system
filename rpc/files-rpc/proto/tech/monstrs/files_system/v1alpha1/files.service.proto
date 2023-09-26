@@ -50,6 +50,7 @@ message ConfirmUploadResponse {
 message ListFilesRequest {
   message FilesQuery {
     tech.monstrs.queries.v1alpha1.Query.ID id = 1;
+    tech.monstrs.queries.v1alpha1.Query.ID owner_id = 2;
   }
 
   tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;

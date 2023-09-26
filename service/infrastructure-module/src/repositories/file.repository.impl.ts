@@ -70,6 +70,7 @@ export class FileRepositoryImpl extends FileRepository {
       this.em.createQueryBuilder(FileEntity)
     )
       .id('id', query?.id)
+      .id('ownerId', query?.ownerId)
       .order(order)
       .pager(pager)
       .execute()

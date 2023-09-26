@@ -4,6 +4,7 @@ import type { File }  from '../aggregates/index.js'
 
 export interface FilesQuery {
   id?: Query.IDType
+  ownerId?: Query.IDType
 }
 
 export interface FindFilesByQuery {
