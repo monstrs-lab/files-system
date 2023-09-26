@@ -3,19 +3,27 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions } from '@bufbuild/protobuf'
-import type { FieldList }         from '@bufbuild/protobuf'
-import type { JsonReadOptions }   from '@bufbuild/protobuf'
-import type { JsonValue }         from '@bufbuild/protobuf'
-import type { PartialMessage }    from '@bufbuild/protobuf'
-import type { PlainMessage }      from '@bufbuild/protobuf'
+import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
 
-import { Message }                from '@bufbuild/protobuf'
-import { proto3 }                 from '@bufbuild/protobuf'
+import type { FieldList }                                                           from '@bufbuild/protobuf'
 
-import { Query_ID }               from '../../queries/v1alpha1/queries_pb.js'
-import { Query_Order }            from '../../queries/v1alpha1/queries_pb.js'
-import { Query_Pager }            from '../../queries/v1alpha1/queries_pb.js'
+import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
+
+import type { JsonValue }                               from '@bufbuild/protobuf'
+
+import type { PartialMessage }               from '@bufbuild/protobuf'
+
+import type { PlainMessage } from '@bufbuild/protobuf'
+
+import { Message }                                                                                     from '@bufbuild/protobuf'
+
+import { proto3 }                                                                             from '@bufbuild/protobuf'
+
+import { Query_ID }                                                                                    from '../../queries/v1alpha1/queries_pb.js'
+
+import { Query_Order }                                                                       from '../../queries/v1alpha1/queries_pb.js'
+
+import { Query_Pager }                                                          from '../../queries/v1alpha1/queries_pb.js'
 
 /**
  * @generated from message tech.monstrs.files_system.v1alpha1.File
@@ -427,6 +435,11 @@ export class ListFilesRequest_FilesQuery extends Message<ListFilesRequest_FilesQ
    */
   id?: Query_ID
 
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.ID owner_id = 2;
+   */
+  ownerId?: Query_ID
+
   constructor(data?: PartialMessage<ListFilesRequest_FilesQuery>) {
     super()
     proto3.util.initPartial(data, this)
@@ -436,6 +449,7 @@ export class ListFilesRequest_FilesQuery extends Message<ListFilesRequest_FilesQ
   static readonly typeName = 'tech.monstrs.files_system.v1alpha1.ListFilesRequest.FilesQuery'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: 'id', kind: 'message', T: Query_ID },
+    { no: 2, name: 'owner_id', kind: 'message', T: Query_ID },
   ])
 
   static fromBinary(

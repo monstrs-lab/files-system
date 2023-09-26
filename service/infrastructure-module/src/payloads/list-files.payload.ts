@@ -17,6 +17,12 @@ export class ListFilesQueryPayload {
   get id(): IdQueryPayload {
     return new IdQueryPayload(this.query.id)
   }
+
+  @IsOptional()
+  @ValidateNested()
+  get ownerId(): IdQueryPayload {
+    return new IdQueryPayload(this.query.ownerId)
+  }
 }
 
 export class ListFilesPayload {

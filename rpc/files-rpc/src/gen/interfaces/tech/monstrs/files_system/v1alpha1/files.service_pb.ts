@@ -3,8 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { Query_ID }    from '../../queries/v1alpha1/queries_pb.js'
-import type { Query_Order } from '../../queries/v1alpha1/queries_pb.js'
+import type { Query_ID }                           from '../../queries/v1alpha1/queries_pb.js'
+
+import type { Query_Order }              from '../../queries/v1alpha1/queries_pb.js'
+
 import type { Query_Pager } from '../../queries/v1alpha1/queries_pb.js'
 
 /**
@@ -150,4 +152,9 @@ export interface ListFilesRequest_FilesQuery {
    * @generated from field: tech.monstrs.queries.v1alpha1.Query.ID id = 1;
    */
   id?: Query_ID
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.ID owner_id = 2;
+   */
+  ownerId?: Query_ID
 }

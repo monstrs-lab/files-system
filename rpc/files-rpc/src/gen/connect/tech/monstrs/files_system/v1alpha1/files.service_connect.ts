@@ -3,14 +3,19 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }            from '@bufbuild/protobuf'
+import { MethodKind }                                                                                                                  from '@bufbuild/protobuf'
 
-import { ConfirmUploadRequest }  from './files.service_pb.js'
-import { ConfirmUploadResponse } from './files.service_pb.js'
-import { CreateUploadRequest }   from './files.service_pb.js'
-import { CreateUploadResponse }  from './files.service_pb.js'
-import { ListFilesRequest }      from './files.service_pb.js'
-import { ListFilesResponse }     from './files.service_pb.js'
+import { ConfirmUploadRequest }                                                                                                        from './files.service_pb.js'
+
+import { ConfirmUploadResponse }                                                                                 from './files.service_pb.js'
+
+import { CreateUploadRequest }                                                            from './files.service_pb.js'
+
+import { CreateUploadResponse }                                      from './files.service_pb.js'
+
+import { ListFilesRequest }                    from './files.service_pb.js'
+
+import { ListFilesResponse } from './files.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.files_system.v1alpha1.FilesService
