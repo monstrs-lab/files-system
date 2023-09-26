@@ -18,7 +18,7 @@
     "@faker-js/faker": "^8.0.2",
     "@files-system/application-module": "workspace:0.0.1",
     "@files-system/domain-module": "workspace:0.0.1",
-    "@files-system/files-rpc": "workspace:0.0.4",
+    "@files-system/files-rpc": "workspace:0.0.5",
     "@files-system/infrastructure-module": "workspace:0.0.1",
     "@jest/globals": "^29.7.0",
     "@monstrs/nestjs-connectrpc": "^0.0.2",
