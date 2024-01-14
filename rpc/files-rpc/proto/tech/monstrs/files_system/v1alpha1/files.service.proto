@@ -8,6 +8,7 @@ service FilesService {
   rpc CreateUpload(CreateUploadRequest) returns (CreateUploadResponse) {}
   rpc ConfirmUpload(ConfirmUploadRequest) returns (ConfirmUploadResponse) {}
   rpc ListFiles(ListFilesRequest) returns (ListFilesResponse) {}
+  rpc GenerateFileUrl(GenerateFileUrlRequest) returns (GenerateFileUrlResponse) {}
 }
 
 message File {
@@ -56,4 +57,12 @@ message ListFilesRequest {
   tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
   tech.monstrs.queries.v1alpha1.Query.Order order = 2;
   FilesQuery query = 3;
+}
+
+message GenerateFileUrlRequest {
+  string id = 1;
+}
+
+message GenerateFileUrlResponse {
+  string url = 1;
 }

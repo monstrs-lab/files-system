@@ -1,4 +1,5 @@
 import type { Upload }         from '@files-system/domain-module'
+import type { File }           from '@files-system/domain-module'
 
 import { join }                from 'node:path'
 import { relative }            from 'node:path'
@@ -16,6 +17,19 @@ export class GcsFilesStorageAdapterImpl extends FilesStorageAdapter {
 
   constructor(private readonly storage: Storage) {
     super()
+  }
+
+  override async generateReadUrl(file: File): Promise<string | undefined> {
+    const [signedUrl] = await this.storage
+      .bucket(file.bucket)
+      .file(new URL(file.url).pathname)
+      .getSignedUrl({
+        version: 'v4',
+        action: 'read',
+        expires: Date.now() + 10 * 60 * 1000,
+      })
+
+    return signedUrl
   }
 
   override async prepareUpload(upload: Upload): Promise<string> {

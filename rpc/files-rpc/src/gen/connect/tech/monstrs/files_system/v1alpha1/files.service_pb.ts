@@ -3,27 +3,19 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
 
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { Query_ID }                                                                                    from '../../queries/v1alpha1/queries_pb.js'
-
-import { Query_Order }                                                                       from '../../queries/v1alpha1/queries_pb.js'
-
-import { Query_Pager }                                                          from '../../queries/v1alpha1/queries_pb.js'
+import { Query_ID }               from '../../queries/v1alpha1/queries_pb.js'
+import { Query_Order }            from '../../queries/v1alpha1/queries_pb.js'
+import { Query_Pager }            from '../../queries/v1alpha1/queries_pb.js'
 
 /**
  * @generated from message tech.monstrs.files_system.v1alpha1.File
@@ -478,5 +470,103 @@ export class ListFilesRequest_FilesQuery extends Message<ListFilesRequest_FilesQ
     b: ListFilesRequest_FilesQuery | PlainMessage<ListFilesRequest_FilesQuery> | undefined
   ): boolean {
     return proto3.util.equals(ListFilesRequest_FilesQuery, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.files_system.v1alpha1.GenerateFileUrlRequest
+ */
+export class GenerateFileUrlRequest extends Message<GenerateFileUrlRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = ''
+
+  constructor(data?: PartialMessage<GenerateFileUrlRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.files_system.v1alpha1.GenerateFileUrlRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GenerateFileUrlRequest {
+    return new GenerateFileUrlRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GenerateFileUrlRequest {
+    return new GenerateFileUrlRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GenerateFileUrlRequest {
+    return new GenerateFileUrlRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GenerateFileUrlRequest | PlainMessage<GenerateFileUrlRequest> | undefined,
+    b: GenerateFileUrlRequest | PlainMessage<GenerateFileUrlRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(GenerateFileUrlRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.files_system.v1alpha1.GenerateFileUrlResponse
+ */
+export class GenerateFileUrlResponse extends Message<GenerateFileUrlResponse> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url = ''
+
+  constructor(data?: PartialMessage<GenerateFileUrlResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.files_system.v1alpha1.GenerateFileUrlResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'url', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GenerateFileUrlResponse {
+    return new GenerateFileUrlResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GenerateFileUrlResponse {
+    return new GenerateFileUrlResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GenerateFileUrlResponse {
+    return new GenerateFileUrlResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GenerateFileUrlResponse | PlainMessage<GenerateFileUrlResponse> | undefined,
+    b: GenerateFileUrlResponse | PlainMessage<GenerateFileUrlResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(GenerateFileUrlResponse, a, b)
   }
 }
