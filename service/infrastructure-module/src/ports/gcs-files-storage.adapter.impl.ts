@@ -20,9 +20,11 @@ export class GcsFilesStorageAdapterImpl extends FilesStorageAdapter {
   }
 
   override async generateReadUrl(file: File): Promise<string | undefined> {
+    const [, filename] = new URL(file.url).pathname.split(`${file.bucket}/`)
+
     const [signedUrl] = await this.storage
       .bucket(file.bucket)
-      .file(new URL(file.url).pathname)
+      .file(filename)
       .getSignedUrl({
         version: 'v4',
         action: 'read',
