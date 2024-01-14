@@ -14,6 +14,7 @@ export class FileMapper {
       ownerId: entity.ownerId,
       type: entity.type,
       url: entity.url,
+      bucket: entity.bucket,
     }
 
     return Object.assign(new File(), properties)
@@ -25,6 +26,7 @@ export class FileMapper {
       ownerId: aggregate.ownerId,
       type: aggregate.type,
       url: aggregate.url,
+      bucket: aggregate.bucket,
     })
 
     return entity

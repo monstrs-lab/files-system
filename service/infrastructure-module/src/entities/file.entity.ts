@@ -19,4 +19,7 @@ export class FileEntity extends BaseEntity<FileEntity, 'id'> {
 
   @Property({ length: 2048 })
   url!: string
+
+  @Property()
+  bucket!: string
 }

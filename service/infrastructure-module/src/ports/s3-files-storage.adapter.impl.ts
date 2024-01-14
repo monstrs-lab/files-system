@@ -1,3 +1,4 @@
+import type { File }           from '@files-system/domain-module'
 import type { Upload }         from '@files-system/domain-module'
 
 import { join }                from 'node:path'
@@ -20,6 +21,18 @@ export class S3FilesStorageAdapterImpl extends FilesStorageAdapter {
 
   constructor(private readonly client: S3Client) {
     super()
+  }
+
+  override async generateReadUrl(file: File): Promise<string | undefined> {
+    const signedUrl = await getSignedUrl(
+      this.client,
+      new GetObjectCommand({
+        Bucket: file.bucket,
+        Key: new URL(file.url).pathname,
+      })
+    )
+
+    return signedUrl
   }
 
   override async prepareUpload(upload: Upload): Promise<string> {

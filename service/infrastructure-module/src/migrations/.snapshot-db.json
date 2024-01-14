@@ -41,6 +41,15 @@
           "nullable": false,
           "length": 2048,
           "mappedType": "string"
+        },
+        "bucket": {
+          "name": "bucket",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "string"
         }
       },
       "name": "files",

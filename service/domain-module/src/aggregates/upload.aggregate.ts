@@ -177,7 +177,13 @@ export class Upload extends AggregateRoot {
 
     this.apply(new UploadConfirmedEvent(this.id))
 
-    return File.create(this.id, this.ownerId, this.bucket.type, metadata.url || this.url)
+    return File.create(
+      this.id,
+      this.ownerId,
+      this.bucket.type,
+      metadata.url || this.url,
+      this.bucket.bucket
+    )
   }
 
   protected onUploadCreatedEvent(event: UploadCreatedEvent): void {

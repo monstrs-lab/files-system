@@ -1,3 +1,5 @@
 export * from './Migration20230831193126.js'
 export * from './Migration20230831200642.js'
 export * from './Migration20230902084941.js'
+export * from './Migration20240114100658.js'
+export * from './Migration20240114100714.js'

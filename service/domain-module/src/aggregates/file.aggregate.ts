@@ -14,6 +14,8 @@ export class File extends AggregateRoot {
 
   #url!: string
 
+  #bucket!: string
+
   get id(): string {
     return this.#id
   }
@@ -46,16 +48,25 @@ export class File extends AggregateRoot {
     this.#url = url
   }
 
+  get bucket(): string {
+    return this.#bucket
+  }
+
+  private set bucket(bucket: string) {
+    this.#bucket = bucket
+  }
+
   @Guard()
   static create(
     @Against('id').NotUUID(4) id: string,
     @Against('ownerId').NotUUID(4) ownerId: string,
     @Against('type').NotEnum(FilesBucketType) type: FilesBucketType,
-    @Against('url').Empty() url: string
+    @Against('url').Empty() url: string,
+    @Against('bucket').Empty() bucket: string
   ): File {
     const file = new File()
 
-    file.apply(new FileCreatedEvent(id, ownerId, type, url))
+    file.apply(new FileCreatedEvent(id, ownerId, type, url, bucket))
 
     return file
   }
@@ -65,5 +76,6 @@ export class File extends AggregateRoot {
     this.ownerId = event.ownerId
     this.type = event.type
     this.url = event.url
+    this.bucket = event.bucket
   }
 }
