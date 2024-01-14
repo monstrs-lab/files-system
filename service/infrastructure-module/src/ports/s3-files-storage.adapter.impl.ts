@@ -24,11 +24,13 @@ export class S3FilesStorageAdapterImpl extends FilesStorageAdapter {
   }
 
   override async generateReadUrl(file: File): Promise<string | undefined> {
+    const [, filename] = new URL(file.url).pathname.split(`${file.bucket}/`)
+
     const signedUrl = await getSignedUrl(
       this.client,
       new GetObjectCommand({
         Bucket: file.bucket,
-        Key: new URL(file.url).pathname,
+        Key: filename,
       })
     )
 
