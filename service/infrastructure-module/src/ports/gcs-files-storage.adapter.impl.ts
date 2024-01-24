@@ -39,7 +39,7 @@ export class GcsFilesStorageAdapterImpl extends FilesStorageAdapter {
       ? relative('/', join(upload.bucket.path, upload.filename))
       : join(upload.bucket.path, upload.filename)
 
-    const [url] = await this.storage
+    const [url, _] = await this.storage
       .bucket(upload.bucket.bucket)
       .file(filename)
       .createResumableUpload({
