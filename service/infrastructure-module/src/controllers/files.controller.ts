@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/consistent-type-imports */
-
 import type { ServiceImpl }             from '@connectrpc/connect'
 import type { Upload }                  from '@files-system/domain-module'
 import type { File }                    from '@files-system/domain-module'

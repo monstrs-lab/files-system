@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { FilesBucket } from '@files-system/domain-module'
 
 import { Entity }           from '@mikro-orm/core'

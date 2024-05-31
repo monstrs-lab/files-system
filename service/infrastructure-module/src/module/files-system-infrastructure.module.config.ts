@@ -3,7 +3,6 @@ import type { CqrsKafkaEventsModuleOptions }           from '@monstrs/nestjs-cqr
 import type { GcsClientModuleOptions }                 from '@monstrs/nestjs-gcs-client'
 import type { S3ClientModuleOptions }                  from '@monstrs/nestjs-s3-client'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { FilesSystemInfrastructureModuleOptions } from './files-system-infrastructure.module.interfaces.js'
 
 import { Inject }                                      from '@nestjs/common'
