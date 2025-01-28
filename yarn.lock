@@ -1608,64 +1608,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-darwin-arm64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-darwin-arm64@npm:1.26.1"
+"@bufbuild/buf-darwin-arm64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-darwin-arm64@npm:1.50.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-darwin-x64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-darwin-x64@npm:1.26.1"
+"@bufbuild/buf-darwin-x64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-darwin-x64@npm:1.50.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-linux-aarch64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-linux-aarch64@npm:1.26.1"
+"@bufbuild/buf-linux-aarch64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-linux-aarch64@npm:1.50.0"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-linux-x64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-linux-x64@npm:1.26.1"
+"@bufbuild/buf-linux-armv7@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-linux-armv7@npm:1.50.0"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-linux-x64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-linux-x64@npm:1.50.0"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-win32-arm64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-win32-arm64@npm:1.26.1"
+"@bufbuild/buf-win32-arm64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-win32-arm64@npm:1.50.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf-win32-x64@npm:1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf-win32-x64@npm:1.26.1"
+"@bufbuild/buf-win32-x64@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf-win32-x64@npm:1.50.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@bufbuild/buf@npm:^1.26.1":
-  version: 1.26.1
-  resolution: "@bufbuild/buf@npm:1.26.1"
+"@bufbuild/buf@npm:^1.50.0":
+  version: 1.50.0
+  resolution: "@bufbuild/buf@npm:1.50.0"
   dependencies:
-    "@bufbuild/buf-darwin-arm64": "npm:1.26.1"
-    "@bufbuild/buf-darwin-x64": "npm:1.26.1"
-    "@bufbuild/buf-linux-aarch64": "npm:1.26.1"
-    "@bufbuild/buf-linux-x64": "npm:1.26.1"
-    "@bufbuild/buf-win32-arm64": "npm:1.26.1"
-    "@bufbuild/buf-win32-x64": "npm:1.26.1"
+    "@bufbuild/buf-darwin-arm64": "npm:1.50.0"
+    "@bufbuild/buf-darwin-x64": "npm:1.50.0"
+    "@bufbuild/buf-linux-aarch64": "npm:1.50.0"
+    "@bufbuild/buf-linux-armv7": "npm:1.50.0"
+    "@bufbuild/buf-linux-x64": "npm:1.50.0"
+    "@bufbuild/buf-win32-arm64": "npm:1.50.0"
+    "@bufbuild/buf-win32-x64": "npm:1.50.0"
   dependenciesMeta:
     "@bufbuild/buf-darwin-arm64":
       optional: true
     "@bufbuild/buf-darwin-x64":
       optional: true
     "@bufbuild/buf-linux-aarch64":
+      optional: true
+    "@bufbuild/buf-linux-armv7":
       optional: true
     "@bufbuild/buf-linux-x64":
       optional: true
@@ -1677,34 +1687,53 @@ __metadata:
     buf: bin/buf
     protoc-gen-buf-breaking: bin/protoc-gen-buf-breaking
     protoc-gen-buf-lint: bin/protoc-gen-buf-lint
-  checksum: 10c0/90e2ca597e7821a4b6bc58a84fa0583d73a3a7d37e13f2f7db688f566c8d29aba10ab5ce07b217917774d65f62bcc57a2984d7c180e24b6d1b025f16e7c63d69
+  checksum: 10c0/4b458a8599071cb0b5cd375c71aad0959fe3ba533988868a6638716146cfc42f10a4b70c24381b5c7b9086e7487c50e44eb60252341465dd59bc3c32397ebdb5
   languageName: node
   linkType: hard
 
-"@bufbuild/protobuf@npm:*, @bufbuild/protobuf@npm:1.3.1, @bufbuild/protobuf@npm:^1.2.1, @bufbuild/protobuf@npm:^1.3.1":
+"@bufbuild/protobuf@npm:*, @bufbuild/protobuf@npm:1.3.1":
   version: 1.3.1
   resolution: "@bufbuild/protobuf@npm:1.3.1"
   checksum: 10c0/a3bcdf15aceca55adbeea1180069d9ddd5bea82293f93c906672c2f5bda776b4999cec3b9d7822cd95b24e51d1f6b5cc4fa7c7eb01a6c6edf3f25c833549daf5
   languageName: node
   linkType: hard
 
-"@bufbuild/protoc-gen-es@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "@bufbuild/protoc-gen-es@npm:1.3.1"
+"@bufbuild/protobuf@npm:1.10.0, @bufbuild/protobuf@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "@bufbuild/protobuf@npm:1.10.0"
+  checksum: 10c0/5487b9c2e63846d0e3bde4d025cc77ae44a22166a5d6c184df0da5581e1ab6d66dd115af0ccad814576dcd011bb1b93989fb0ac1eb4ae452979bb8b186693ba0
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoc-gen-es@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "@bufbuild/protoc-gen-es@npm:1.10.0"
   dependencies:
-    "@bufbuild/protoplugin": "npm:1.3.1"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@bufbuild/protoplugin": "npm:1.10.0"
   peerDependencies:
-    "@bufbuild/protobuf": 1.3.1
+    "@bufbuild/protobuf": 1.10.0
   peerDependenciesMeta:
     "@bufbuild/protobuf":
       optional: true
   bin:
     protoc-gen-es: bin/protoc-gen-es
-  checksum: 10c0/32ab8dd3c781b8e590f1c586e5b3704afd51f2172b1520af45667cddd68a63b09524bd9571ae4f7c883fec887bea05807bb5e2a6294a8900e079213a213117bd
+  checksum: 10c0/d5f53df70a6fc4d13b47ff56244318313de1a24a61aa5a7dd82efc4b5baa031c6bf1aface6a3f5b28a935ab5802de28fbe5c8bbc4d16d7d245fb4918cfe263df
   languageName: node
   linkType: hard
 
-"@bufbuild/protoplugin@npm:1.3.1, @bufbuild/protoplugin@npm:^1.2.1, @bufbuild/protoplugin@npm:^1.3.1":
+"@bufbuild/protoplugin@npm:1.10.0, @bufbuild/protoplugin@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "@bufbuild/protoplugin@npm:1.10.0"
+  dependencies:
+    "@bufbuild/protobuf": "npm:1.10.0"
+    "@typescript/vfs": "npm:^1.4.0"
+    typescript: "npm:4.5.2"
+  checksum: 10c0/8080e75d3c2b122f763ea4b1f039c40d7ea9a5e9054c3b3c55cabe4d2949eb18b6ebb45fcc23d2463a3ea22dfaeda8c91e82cac700a957ca75cf002f231f3d43
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoplugin@npm:^1.3.1":
   version: 1.3.1
   resolution: "@bufbuild/protoplugin@npm:1.3.1"
   dependencies:
@@ -1715,36 +1744,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@connectrpc/connect-node@npm:^0.13.2":
-  version: 0.13.2
-  resolution: "@connectrpc/connect-node@npm:0.13.2"
+"@connectrpc/connect-node@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@connectrpc/connect-node@npm:1.6.1"
   dependencies:
-    "@connectrpc/connect": "npm:0.13.2"
-    undici: "npm:^5.23.0"
+    undici: "npm:^5.28.4"
   peerDependencies:
-    "@bufbuild/protobuf": ^1.2.1
-  checksum: 10c0/cfa3fc0e38649e36aadfbfaabac8d95d2632c674206854bb9fac36e3711494661d560f616e9f93f37bf35be0a3a6e9a1cacd539585a1533ecd072471ec7bdf8e
+    "@bufbuild/protobuf": ^1.10.0
+    "@connectrpc/connect": 1.6.1
+  checksum: 10c0/9891bbbe5ec155d16141e378c120dd6d4c47e1517656d4676aca762d70426a9eb3d9ec92595a7cfc4f5cbe40ff5be572d0c3d9010058107854e7f62ee05fb46e
   languageName: node
   linkType: hard
 
-"@connectrpc/connect@npm:0.13.2, @connectrpc/connect@npm:^0.13.2":
-  version: 0.13.2
-  resolution: "@connectrpc/connect@npm:0.13.2"
+"@connectrpc/connect@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@connectrpc/connect@npm:1.6.1"
   peerDependencies:
-    "@bufbuild/protobuf": ^1.2.1
-  checksum: 10c0/e53516bcf1e7167aa1c2ed3dce53ac799516bbddb7da801a673850f79874689ebd530bed05ebabe65ede907f0570c683df9765d37d9000246cee38706221c19c
+    "@bufbuild/protobuf": ^1.10.0
+  checksum: 10c0/35c6fd3e33c3a1ff9dce230b059ecd7991ef0dc60c16fb898e5c46b930a01077ac0b34d53d6742cc8ed079f20f8eacc7c77a8620aeec9efaf68950494f387011
   languageName: node
   linkType: hard
 
-"@connectrpc/protoc-gen-connect-es@npm:^0.13.2":
-  version: 0.13.2
-  resolution: "@connectrpc/protoc-gen-connect-es@npm:0.13.2"
+"@connectrpc/protoc-gen-connect-es@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@connectrpc/protoc-gen-connect-es@npm:1.6.1"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.2.1"
-    "@bufbuild/protoplugin": "npm:^1.2.1"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@bufbuild/protoplugin": "npm:^1.10.0"
   peerDependencies:
-    "@bufbuild/protoc-gen-es": ^1.2.1
-    "@connectrpc/connect": 0.13.2
+    "@bufbuild/protoc-gen-es": ^1.10.0
+    "@connectrpc/connect": 1.6.1
   peerDependenciesMeta:
     "@bufbuild/protoc-gen-es":
       optional: true
@@ -1752,7 +1781,7 @@ __metadata:
       optional: true
   bin:
     protoc-gen-connect-es: bin/protoc-gen-connect-es
-  checksum: 10c0/a2f99ad26d6a12401ec38058f8ff24db2ea19179e0085f1778334a5725d145d7af2011ccb522f238c6492d28380d705bf71cb5ba8de98d2518fe7338475833a7
+  checksum: 10c0/afec7c0dda15f6a07d09dc3444564e76bd88cf698127c6a5d7e032fc081b51ab25dca35e87c8b4eacbabf24fdfd14ea181b1183660ba8fc22f87a7d9aa4b305e
   languageName: node
   linkType: hard
 
@@ -2195,6 +2224,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/busboy@npm:^2.0.0":
+  version: 2.1.1
+  resolution: "@fastify/busboy@npm:2.1.1"
+  checksum: 10c0/6f8027a8cba7f8f7b736718b013f5a38c0476eea67034c94a0d3c375e2b114366ad4419e6a6fa7ffc2ef9c6d3e0435d76dd584a7a1cbac23962fda7650b579e3
+  languageName: node
+  linkType: hard
+
 "@files-system/application-module@workspace:0.0.1, @files-system/application-module@workspace:service/application-module":
   version: 0.0.0-use.local
   resolution: "@files-system/application-module@workspace:service/application-module"
@@ -2250,13 +2286,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@files-system/files-rpc-client-module@workspace:rpc/files-rpc-client-module":
+  version: 0.0.0-use.local
+  resolution: "@files-system/files-rpc-client-module@workspace:rpc/files-rpc-client-module"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@connectrpc/connect": "npm:^1.6.1"
+    "@connectrpc/connect-node": "npm:^1.6.1"
+    "@files-system/files-rpc": "workspace:0.0.6"
+    "@nestjs/common": "npm:^10.2.5"
+    "@nestjs/core": "npm:^10.2.5"
+    dataloader: "npm:^2.2.2"
+    reflect-metadata: "npm:^0.2.2"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1.5.0
+    "@connectrpc/connect": ^1.1.3
+    "@connectrpc/connect-node": ^1.1.3
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    reflect-metadata: ^0.2
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
 "@files-system/files-rpc-client@workspace:rpc/files-rpc-client":
   version: 0.0.0-use.local
   resolution: "@files-system/files-rpc-client@workspace:rpc/files-rpc-client"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.3.1"
-    "@connectrpc/connect": "npm:^0.13.2"
-    "@connectrpc/connect-node": "npm:^0.13.2"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@connectrpc/connect": "npm:^1.6.1"
+    "@connectrpc/connect-node": "npm:^1.6.1"
     "@files-system/files-rpc": "workspace:0.0.6"
   languageName: unknown
   linkType: soft
@@ -2265,10 +2325,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@files-system/files-rpc@workspace:rpc/files-rpc"
   dependencies:
-    "@bufbuild/buf": "npm:^1.26.1"
-    "@bufbuild/protobuf": "npm:^1.3.1"
-    "@bufbuild/protoc-gen-es": "npm:^1.3.1"
-    "@connectrpc/protoc-gen-connect-es": "npm:^0.13.2"
+    "@bufbuild/buf": "npm:^1.50.0"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@bufbuild/protoc-gen-es": "npm:^1.10.0"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.6.1"
     "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
     "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
   peerDependencies:
@@ -2280,9 +2340,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@files-system/infrastructure-module@workspace:service/infrastructure-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.3.1"
-    "@connectrpc/connect": "npm:^0.13.2"
-    "@connectrpc/connect-node": "npm:^0.13.2"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@connectrpc/connect": "npm:^1.6.1"
+    "@connectrpc/connect-node": "npm:^1.6.1"
     "@faker-js/faker": "npm:^8.0.2"
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
@@ -2299,8 +2359,8 @@ __metadata:
     "@monstrs/base-types": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.19"
     "@monstrs/mikro-orm-query-builder": "npm:^0.0.9"
-    "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
-    "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.2"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.9"
+    "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.9"
     "@monstrs/nestjs-cqrs": "npm:^0.0.3"
     "@monstrs/nestjs-cqrs-kafka-events": "npm:^0.0.2"
     "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
@@ -2308,7 +2368,7 @@ __metadata:
     "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.2"
     "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.1"
     "@monstrs/nestjs-s3-client": "npm:^0.1.3"
-    "@monstrs/nestjs-validation": "npm:^0.1.1"
+    "@monstrs/nestjs-validation": "npm:^0.1.5"
     "@monstrs/rpc-query-payloads": "npm:^0.0.11"
     "@nestjs/common": "npm:^10.2.5"
     "@nestjs/core": "npm:^10.2.5"
@@ -2327,13 +2387,13 @@ __metadata:
     typescript: "npm:^5.2.2"
     uuid: "npm:^9.0.1"
   peerDependencies:
-    "@bufbuild/protobuf": ^1.3.1
-    "@connectrpc/connect": ^0.13
-    "@connectrpc/connect-node": ^0.13
+    "@bufbuild/protobuf": ^1
+    "@connectrpc/connect": ^1
+    "@connectrpc/connect-node": ^1
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
     "@files-system/files-rpc": "workspace:0.0.6"
-    "@monstrs/nestjs-connectrpc": ^0.0.2
+    "@monstrs/nestjs-connectrpc": ^0.0.9
     "@monstrs/nestjs-microservices-registry": ^0.1.0
     "@nestjs/common": ^10
     "@nestjs/core": ^10
@@ -2350,16 +2410,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@files-system/service-entrypoint@workspace:service/service-entrypoint"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.3.1"
-    "@connectrpc/connect": "npm:^0.13.2"
-    "@connectrpc/connect-node": "npm:^0.13.2"
+    "@bufbuild/protobuf": "npm:^1.10.0"
+    "@connectrpc/connect": "npm:^1.6.1"
+    "@connectrpc/connect-node": "npm:^1.6.1"
     "@faker-js/faker": "npm:^8.0.2"
     "@files-system/application-module": "workspace:0.0.1"
     "@files-system/domain-module": "workspace:0.0.1"
     "@files-system/files-rpc": "workspace:0.0.6"
     "@files-system/infrastructure-module": "workspace:0.0.1"
     "@jest/globals": "npm:^29.7.0"
-    "@monstrs/nestjs-connectrpc": "npm:^0.0.2"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.9"
     "@monstrs/nestjs-gcs-client": "npm:^0.1.2"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
@@ -3154,6 +3214,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/core-errors@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@monstrs/core-errors@npm:0.1.1"
+  checksum: 10c0/a38ede88143272326f42726f062e9796734371e23a0a6173d01fdb6acb2b6a6655e547c649aebd585499397fd9bfd5f254308487b7322694a3d34e3c2b91f947
+  languageName: node
+  linkType: hard
+
 "@monstrs/guard-clause@npm:^0.0.7":
   version: 0.0.7
   resolution: "@monstrs/guard-clause@npm:0.0.7"
@@ -3161,6 +3228,16 @@ __metadata:
     ajv: "npm:^8.12.0"
     validator: "npm:^13.9.0"
   checksum: 10c0/fa66ef508da461b8923ba4ba4247fad39bd5153c4e029c443116c2ce4b3d0d9d053250568858381078d0dd7650ad9868f6c6bd5aecff894b2f61c224118a85cf
+  languageName: node
+  linkType: hard
+
+"@monstrs/guard-clause@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@monstrs/guard-clause@npm:0.0.8"
+  dependencies:
+    ajv: "npm:^8.12.0"
+    validator: "npm:^13.9.0"
+  checksum: 10c0/42cfec61c7d301da20781c6cbb87bbf68d887e287fc75b7f494ac018f297837a7074eafdd340d5f422a44c30a4eb0ab24c67058ba6b6aa02aee4ab7f2bd305f3
   languageName: node
   linkType: hard
 
@@ -3242,41 +3319,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/nestjs-connectrpc-errors@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@monstrs/nestjs-connectrpc-errors@npm:0.0.2"
+"@monstrs/nestjs-connectrpc-errors@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@monstrs/nestjs-connectrpc-errors@npm:0.0.9"
   dependencies:
-    "@monstrs/core-errors": "npm:^0.0.2"
-    "@monstrs/guard-clause": "npm:^0.0.7"
-    "@monstrs/protobuf-rpc": "npm:^0.0.6"
+    "@monstrs/core-errors": "npm:^0.1.1"
+    "@monstrs/guard-clause": "npm:^0.0.8"
+    "@monstrs/protobuf-rpc": "npm:^0.0.8"
   peerDependencies:
-    "@connectrpc/connect": ^0.13
-    "@monstrs/nestjs-validation": 0.1.1
+    "@bufbuild/protobuf": ^1
+    "@connectrpc/connect": ^1
+    "@monstrs/nestjs-validation": 0.1.5
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/microservices": ^10
     class-transformer: ^0.5
     class-validator: ^0.14
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
-  checksum: 10c0/6c784a6dfe3defe43e00f341c47b4c913822f43cd95296a8cc134dc38de806ee9b9968237fbbb50d3f4d9ce83217fc998ea86f765c50cc1c99c109719a1cbb88
+  checksum: 10c0/c303b35253a88ac81cd11673b500779db0209a31ee55f1955a0bb27b27fe8ec8ea55637452f01253efafd5cb24091193d6701926c3eddd304be3581484f55ab6
   languageName: node
   linkType: hard
 
-"@monstrs/nestjs-connectrpc@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@monstrs/nestjs-connectrpc@npm:0.0.2"
+"@monstrs/nestjs-connectrpc@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@monstrs/nestjs-connectrpc@npm:0.0.9"
   peerDependencies:
     "@bufbuild/protobuf": ^1
-    "@connectrpc/connect": ^0.13
-    "@connectrpc/connect-node": ^0.13
+    "@connectrpc/connect": ^1
+    "@connectrpc/connect-node": ^1
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/microservices": ^10
     "@nestjs/platform-express": ^10
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
-  checksum: 10c0/c68553914188c52296c1cc02ca355a0ce3e96e2828b2f4e1a56ceb2bb0ff2ef8c0a0d779c236af84074a55487e29427736fdbe057c05bdd8f5016b591226e990
+  checksum: 10c0/45f076a38c1b109d8751da7f58cc5f4cb04f7fd4e2939313bde8f4a50a70364c3704434d923785a87ec9977e7d05f52e78213c859a84b0d51451e6338bee4b80
   languageName: node
   linkType: hard
 
@@ -3412,17 +3490,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/nestjs-validation@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@monstrs/nestjs-validation@npm:0.1.1"
+"@monstrs/nestjs-validation@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "@monstrs/nestjs-validation@npm:0.1.5"
   peerDependencies:
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     class-transformer: 0.5
     class-validator: ^0.14
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
-  checksum: 10c0/e28c73e41456f8e87be45a9b539c661b9c01842e266b6838551d37c4d673bf2bedb36589f23aefe7c16ac05bbf7d41c0b83c64d80f4723d802d47cfb2e2c0241
+  checksum: 10c0/0bb183f62b4609927acf0078f7cc1638d28d4caf69dd81cce94c5580735259f233515acba312bdd10301079022323e1fb25bc488925f93fecf838da5bf0ea844
   languageName: node
   linkType: hard
 
@@ -3435,12 +3513,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/protobuf-rpc@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "@monstrs/protobuf-rpc@npm:0.0.6"
+"@monstrs/protobuf-rpc@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@monstrs/protobuf-rpc@npm:0.0.8"
   peerDependencies:
     "@bufbuild/protobuf": "*"
-  checksum: 10c0/fe03f9063078af53b9254b574f02634709df37dfaf08b3937acccf8fc72fc1498b1e21b07ce6366cb3fb098427feaa2b228966de4729a9d30850bdc39546278e
+  checksum: 10c0/32f7092f5da3b092537abb11b165aea81045782793c303d2c1840f5c0623befd10fe6a781f14e119f6be59197167cf6957150e7a1c64b3fdb454ad33b0cf4709
   languageName: node
   linkType: hard
 
@@ -6464,7 +6542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"busboy@npm:^1.0.0, busboy@npm:^1.6.0":
+"busboy@npm:^1.0.0":
   version: 1.6.0
   resolution: "busboy@npm:1.6.0"
   dependencies:
@@ -7036,6 +7114,13 @@ __metadata:
     es-errors: "npm:^1.3.0"
     is-data-view: "npm:^1.0.1"
   checksum: 10c0/21b0d2e53fd6e20cc4257c873bf6d36d77bd6185624b84076c0a1ddaa757b49aaf076254006341d35568e89f52eecd1ccb1a502cfb620f2beca04f48a6a62a8f
+  languageName: node
+  linkType: hard
+
+"dataloader@npm:^2.2.2":
+  version: 2.2.3
+  resolution: "dataloader@npm:2.2.3"
+  checksum: 10c0/9b9a056fbc863ca86da87d59e053e871e263b4966aa4d55e40d61a65e96815fae5530ca220629064ca5f8e3000c0c4ec93292e170c38ff393fb34256b4d7c1aa
   languageName: node
   linkType: hard
 
@@ -12248,6 +12333,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reflect-metadata@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "reflect-metadata@npm:0.2.2"
+  checksum: 10c0/1cd93a15ea291e420204955544637c264c216e7aac527470e393d54b4bb075f10a17e60d8168ec96600c7e0b9fcc0cb0bb6e91c3fbf5b0d8c9056f04e6ac1ec2
+  languageName: node
+  linkType: hard
+
 "reflect.getprototypeof@npm:^1.0.4":
   version: 1.0.6
   resolution: "reflect.getprototypeof@npm:1.0.6"
@@ -13963,12 +14055,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.23.0":
-  version: 5.23.0
-  resolution: "undici@npm:5.23.0"
+"undici@npm:^5.28.4":
+  version: 5.28.5
+  resolution: "undici@npm:5.28.5"
   dependencies:
-    busboy: "npm:^1.6.0"
-  checksum: 10c0/43a6ecddb30733adc33bc7a922fa7609c3e75f6555beab05e26c50f4be20ed893d7e9ac4332b332320961252dbc89c865955a5b5dbc3bcd2197ca4f015e7ad97
+    "@fastify/busboy": "npm:^2.0.0"
+  checksum: 10c0/4dfaa13089fe4c0758f84ec0d34b257e58608e6be3aa540f493b9864b39e3fdcd0a1ace38e434fe79db55f833aa30bcfddd8d6cbe3e0982b0dcae8ec17b65e08
   languageName: node
   linkType: hard
 

@@ -23,10 +23,10 @@
     "postpack": "rm -rf dist"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.26.1",
-    "@bufbuild/protobuf": "^1.3.1",
-    "@bufbuild/protoc-gen-es": "^1.3.1",
-    "@connectrpc/protoc-gen-connect-es": "^0.13.2",
+    "@bufbuild/buf": "^1.50.0",
+    "@bufbuild/protobuf": "^1.10.0",
+    "@bufbuild/protoc-gen-es": "^1.10.0",
+    "@connectrpc/protoc-gen-connect-es": "^1.6.1",
     "@monstrs/protoc-gen-abstractions": "^0.0.5",
     "@monstrs/protoc-gen-interfaces": "^0.0.4"
   },
