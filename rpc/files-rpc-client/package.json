@@ -1,6 +1,6 @@
 {
   "name": "@files-system/files-rpc-client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -20,7 +20,7 @@
     "@bufbuild/protobuf": "^1.10.0",
     "@connectrpc/connect": "^1.6.1",
     "@connectrpc/connect-node": "^1.6.1",
-    "@files-system/files-rpc": "workspace:0.0.6"
+    "@files-system/files-rpc": "workspace:0.0.7"
   },
   "publishConfig": {
     "exports": {

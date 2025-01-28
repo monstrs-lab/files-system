@@ -1,4 +1,0 @@
-releases:
-  "@files-system/files-rpc": patch
-  "@files-system/files-rpc-client": patch
-  "@files-system/files-rpc-client-module": patch
