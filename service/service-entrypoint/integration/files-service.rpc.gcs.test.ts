@@ -7,7 +7,6 @@ import { createReadStream }                           from 'node:fs'
 import { join }                                       from 'node:path'
 import { fileURLToPath }                              from 'node:url'
 
-import { ConnectError }                               from '@connectrpc/connect'
 import { ConnectRpcServer }                           from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }                             from '@monstrs/nestjs-connectrpc'
 import { Test }                                       from '@nestjs/testing'
@@ -20,6 +19,7 @@ import { afterAll }                                   from '@jest/globals'
 import { beforeAll }                                  from '@jest/globals'
 import { expect }                                     from '@jest/globals'
 import { it }                                         from '@jest/globals'
+import { findLogicalError }                           from '@monstrs/protobuf-rpc'
 import { GenericContainer }                           from 'testcontainers'
 import { Wait }                                       from 'testcontainers'
 import getPort                                        from 'get-port'
@@ -189,9 +189,9 @@ describe('files-service', () => {
                 ownerId: upload?.ownerId,
               })
             } catch (error) {
-              if (error instanceof ConnectError) {
-                expect(error.rawMessage).toBe('File not uploaded')
-              }
+              const logicalError = findLogicalError(error)
+
+              expect(logicalError?.message).toBe('File not uploaded')
             }
           })
 
@@ -250,9 +250,9 @@ describe('files-service', () => {
                 ownerId: upload?.ownerId,
               })
             } catch (error) {
-              if (error instanceof ConnectError) {
-                expect(error.rawMessage).toBe('Upload already confirmed')
-              }
+              const logicalError = findLogicalError(error)
+
+              expect(logicalError?.message).toBe('Upload already confirmed')
             }
           })
         })
