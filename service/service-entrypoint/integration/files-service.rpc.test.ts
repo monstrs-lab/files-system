@@ -1,36 +1,37 @@
-import type { PromiseClient }                         from '@connectrpc/connect'
-import type { INestMicroservice }                     from '@nestjs/common'
-import type { StartedKafkaContainer }                 from '@testcontainers/kafka'
-import type { StartedTestContainer }                  from 'testcontainers'
+import type { PromiseClient }                           from '@connectrpc/connect'
+import type { INestMicroservice }                       from '@nestjs/common'
+import type { StartedKafkaContainer }                   from '@testcontainers/kafka'
+import type { StartedTestContainer }                    from 'testcontainers'
 
-import { ConnectError }                               from '@connectrpc/connect'
-import { ConnectRpcServer }                           from '@monstrs/nestjs-connectrpc'
-import { ServerProtocol }                             from '@monstrs/nestjs-connectrpc'
-import { Test }                                       from '@nestjs/testing'
-import { KafkaContainer }                             from '@testcontainers/kafka'
-import { createPromiseClient }                        from '@connectrpc/connect'
-import { createGrpcTransport }                        from '@connectrpc/connect-node'
-import { faker }                                      from '@faker-js/faker'
-import { describe }                                   from '@jest/globals'
-import { afterAll }                                   from '@jest/globals'
-import { beforeAll }                                  from '@jest/globals'
-import { expect }                                     from '@jest/globals'
-import { it }                                         from '@jest/globals'
-import { findValidationErrorDetails }                 from '@monstrs/protobuf-rpc'
-import { GenericContainer }                           from 'testcontainers'
-import { Wait }                                       from 'testcontainers'
-import getPort                                        from 'get-port'
+import { ConnectError }                                 from '@connectrpc/connect'
+import { ConnectRpcServer }                             from '@monstrs/nestjs-connectrpc'
+import { ServerProtocol }                               from '@monstrs/nestjs-connectrpc'
+import { Test }                                         from '@nestjs/testing'
+import { KafkaContainer }                               from '@testcontainers/kafka'
+import { createPromiseClient }                          from '@connectrpc/connect'
+import { createGrpcTransport }                          from '@connectrpc/connect-node'
+import { faker }                                        from '@faker-js/faker'
+import { describe }                                     from '@jest/globals'
+import { afterAll }                                     from '@jest/globals'
+import { beforeAll }                                    from '@jest/globals'
+import { expect }                                       from '@jest/globals'
+import { it }                                           from '@jest/globals'
+import { findLogicalError }                             from '@monstrs/protobuf-rpc'
+import { findValidationErrorDetails } from '@monstrs/protobuf-rpc'
+import { GenericContainer }                             from 'testcontainers'
+import { Wait }                                         from 'testcontainers'
+import getPort                                          from 'get-port'
 
-import { FilesBucketsAdapter }                        from '@files-system/domain-module'
-import { FilesBucketSizeConditions }                  from '@files-system/domain-module'
-import { FilesBucketConditions }                      from '@files-system/domain-module'
-import { FilesBucketType }                            from '@files-system/domain-module'
-import { FilesBucket }                                from '@files-system/domain-module'
-import { FilesService }                               from '@files-system/files-rpc/connect'
-import { StaticFilesBucketsAdapterImpl }              from '@files-system/infrastructure-module'
-import { FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS } from '@files-system/infrastructure-module'
+import { FilesBucketsAdapter }                          from '@files-system/domain-module'
+import { FilesBucketSizeConditions }                    from '@files-system/domain-module'
+import { FilesBucketConditions }                        from '@files-system/domain-module'
+import { FilesBucketType }                              from '@files-system/domain-module'
+import { FilesBucket }                                  from '@files-system/domain-module'
+import { FilesService }                                 from '@files-system/files-rpc/connect'
+import { StaticFilesBucketsAdapterImpl }                from '@files-system/infrastructure-module'
+import { FILES_SYSTEM_INFRASTRUCTURE_MODULE_OPTIONS }   from '@files-system/infrastructure-module'
 
-import { FilesSystemServiceEntrypointModule }         from '../src/files-system-service-entrypoint.module.js'
+import { FilesSystemServiceEntrypointModule }           from '../src/files-system-service-entrypoint.module.js'
 
 describe('files-service', () => {
   describe('rpc', () => {
@@ -60,7 +61,7 @@ describe('files-service', () => {
               target: '/data/public/mock.txt',
             },
           ])
-          .withWaitStrategy(Wait.forLogMessage('1 Online'))
+          .withWaitStrategy(Wait.forLogMessage('http://127.0.0.1:9000'))
           .withEnvironment({
             MINIO_ROOT_USER: 'accesskey',
             MINIO_ROOT_PASSWORD: 'secretkey',
@@ -267,11 +268,10 @@ describe('files-service', () => {
                 size: 1,
               })
             } catch (error) {
-              if (error instanceof ConnectError) {
-                expect(error.rawMessage).toBe(
-                  `Files bucket not support type 'application/zip', only 'image/*'`
-                )
-              }
+              const logicalError = findLogicalError(error)
+              expect(logicalError?.message).toBe(
+                `Files bucket not support type 'application/zip', only 'image/*'`
+              )
             }
           })
 
@@ -286,11 +286,11 @@ describe('files-service', () => {
                 size: 2000,
               })
             } catch (error) {
-              if (error instanceof ConnectError) {
-                expect(error.rawMessage).toBe(
-                  'File size must be greater than 0 and less than 1000, current size is 2000'
-                )
-              }
+              const logicalError = findLogicalError(error)
+
+              expect(logicalError?.message).toBe(
+                'File size must be greater than 0 and less than 1000, current size is 2000'
+              )
             }
           })
         })

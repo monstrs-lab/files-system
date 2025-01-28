@@ -2236,14 +2236,14 @@ __metadata:
   resolution: "@files-system/application-module@workspace:service/application-module"
   dependencies:
     "@files-system/domain-module": "workspace:0.0.1"
-    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/logger": "npm:^0.0.20"
     "@nestjs/common": "npm:^10.2.5"
     "@nestjs/core": "npm:^10.2.5"
     "@nestjs/cqrs": "npm:^10.2.5"
     "@nestjs/testing": "npm:^10.2.5"
     "@types/node": "npm:^20.6.0"
     "@types/uuid": "npm:^9.0.3"
-    reflect-metadata: "npm:^0.1.13"
+    reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
     uuid: "npm:^9.0.1"
   peerDependencies:
@@ -2251,7 +2251,7 @@ __metadata:
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/cqrs": ^10
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
   languageName: unknown
   linkType: soft
@@ -2262,9 +2262,9 @@ __metadata:
   dependencies:
     "@faker-js/faker": "npm:^8.0.2"
     "@jest/globals": "npm:^29.7.0"
-    "@monstrs/core-errors": "npm:^0.0.2"
-    "@monstrs/guard-clause": "npm:^0.0.7"
-    "@monstrs/query-types": "npm:^0.0.7"
+    "@monstrs/core-errors": "npm:^0.1.1"
+    "@monstrs/guard-clause": "npm:^0.0.8"
+    "@monstrs/query-types": "npm:^0.0.12"
     "@nestjs/common": "npm:^10.2.5"
     "@nestjs/core": "npm:^10.2.5"
     "@nestjs/cqrs": "npm:^10.2.5"
@@ -2274,14 +2274,14 @@ __metadata:
     "@types/uuid": "npm:^9.0.3"
     mime-match: "npm:^1.0.2"
     mime-types: "npm:^2.1.35"
-    reflect-metadata: "npm:^0.1.13"
+    reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
     uuid: "npm:^9.0.1"
   peerDependencies:
     "@nestjs/common": ^10
     "@nestjs/core": ^10
     "@nestjs/cqrs": ^10
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
   languageName: unknown
   linkType: soft
@@ -2357,7 +2357,7 @@ __metadata:
     "@mikro-orm/postgresql": "npm:^5.8.1"
     "@mikro-orm/seeder": "npm:^5.8.1"
     "@monstrs/base-types": "npm:^0.0.2"
-    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/logger": "npm:^0.0.20"
     "@monstrs/mikro-orm-query-builder": "npm:^0.0.9"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.9"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.9"
@@ -2369,7 +2369,7 @@ __metadata:
     "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.1"
     "@monstrs/nestjs-s3-client": "npm:^0.1.3"
     "@monstrs/nestjs-validation": "npm:^0.1.5"
-    "@monstrs/rpc-query-payloads": "npm:^0.0.11"
+    "@monstrs/rpc-query-payloads": "npm:^0.0.21"
     "@nestjs/common": "npm:^10.2.5"
     "@nestjs/core": "npm:^10.2.5"
     "@nestjs/cqrs": "npm:^10.2.5"
@@ -2381,7 +2381,7 @@ __metadata:
     "@types/uuid": "npm:^9.0.3"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
-    reflect-metadata: "npm:^0.1.13"
+    reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.2.2"
@@ -2401,7 +2401,7 @@ __metadata:
     "@nestjs/microservices": ^10
     class-transformer: ^0.5
     class-validator: ^0.14
-    reflect-metadata: ^0.1
+    reflect-metadata: ^0.2
     rxjs: ^7
   languageName: unknown
   linkType: soft
@@ -2424,7 +2424,7 @@ __metadata:
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
     "@monstrs/nestjs-s3-client": "npm:^0.1.3"
-    "@monstrs/protobuf-rpc": "npm:0.0.7"
+    "@monstrs/protobuf-rpc": "npm:0.0.8"
     "@nestjs/common": "npm:^10.2.5"
     "@nestjs/core": "npm:^10.2.5"
     "@nestjs/cqrs": "npm:^10.2.5"
@@ -2443,7 +2443,7 @@ __metadata:
     node-fetch: "npm:^3.3.2"
     p-retry: "npm:^6.0.0"
     pg: "npm:^8.11.3"
-    reflect-metadata: "npm:^0.1.13"
+    reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
     testcontainers: "npm:^10.2.1"
   languageName: unknown
@@ -3207,27 +3207,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/core-errors@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@monstrs/core-errors@npm:0.0.2"
-  checksum: 10c0/a1fb9b8388b5b90d8f80ee0bf8ace2e4d655320070af43d541466afef3705768ff985ebbedfc4caa281d589e865fb164792a49d7a0568e731856b5f8614d0a67
-  languageName: node
-  linkType: hard
-
 "@monstrs/core-errors@npm:^0.1.1":
   version: 0.1.1
   resolution: "@monstrs/core-errors@npm:0.1.1"
   checksum: 10c0/a38ede88143272326f42726f062e9796734371e23a0a6173d01fdb6acb2b6a6655e547c649aebd585499397fd9bfd5f254308487b7322694a3d34e3c2b91f947
-  languageName: node
-  linkType: hard
-
-"@monstrs/guard-clause@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@monstrs/guard-clause@npm:0.0.7"
-  dependencies:
-    ajv: "npm:^8.12.0"
-    validator: "npm:^13.9.0"
-  checksum: 10c0/fa66ef508da461b8923ba4ba4247fad39bd5153c4e029c443116c2ce4b3d0d9d053250568858381078d0dd7650ad9868f6c6bd5aecff894b2f61c224118a85cf
   languageName: node
   linkType: hard
 
@@ -3278,9 +3261,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/logger@npm:^0.0.19":
-  version: 0.0.19
-  resolution: "@monstrs/logger@npm:0.0.19"
+"@monstrs/logger@npm:^0.0.20":
+  version: 0.0.20
+  resolution: "@monstrs/logger@npm:0.0.20"
   dependencies:
     "@opentelemetry/api": "npm:*"
     "@opentelemetry/api-logs": "npm:^0.42.0"
@@ -3288,7 +3271,7 @@ __metadata:
     "@opentelemetry/sdk-logs": "npm:^0.42.0"
     on-exit-leak-free: "npm:^2.1.0"
     sonic-boom: "npm:^3.3.0"
-  checksum: 10c0/ee09b5638765e76c2ebfdfd78c9f6b6cf9b32b04110d73449d9a3107a19f5543e4103a82d2db2899670c40218b8308ff1ca527391e0089f02ea0f971bdd7a463
+  checksum: 10c0/327c9e03f6534c9a698cd50ad16e784c52ec70655a62c072ff718174472c096796c652bc35fd74ece3dbb40142c9bac4a65f664d04391397cd86f2a2b9336875
   languageName: node
   linkType: hard
 
@@ -3504,16 +3487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/protobuf-rpc@npm:0.0.7":
-  version: 0.0.7
-  resolution: "@monstrs/protobuf-rpc@npm:0.0.7"
-  peerDependencies:
-    "@bufbuild/protobuf": "*"
-  checksum: 10c0/74cef1d7460949fb49fbf935d45efd012bebffdbbd491dfb616c05b9c5bc2e4bfb229a07bdc360a765d4a91bb582d05c3a63cfd3f59e47ee88a17f496bc9dc89
-  languageName: node
-  linkType: hard
-
-"@monstrs/protobuf-rpc@npm:^0.0.8":
+"@monstrs/protobuf-rpc@npm:0.0.8, @monstrs/protobuf-rpc@npm:^0.0.8":
   version: 0.0.8
   resolution: "@monstrs/protobuf-rpc@npm:0.0.8"
   peerDependencies:
@@ -3554,6 +3528,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/query-types@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@monstrs/query-types@npm:0.0.12"
+  checksum: 10c0/2cc84a010c88fdf871f385f56b7bba92685bfb6fa9b8ee678de173919d971b01667231c16426372234c85f4cb4a970a0c0a41abe4ef2ac2447cffd344701b245
+  languageName: node
+  linkType: hard
+
 "@monstrs/query-types@npm:^0.0.7":
   version: 0.0.7
   resolution: "@monstrs/query-types@npm:0.0.7"
@@ -3561,15 +3542,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/rpc-query-payloads@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@monstrs/rpc-query-payloads@npm:0.0.11"
+"@monstrs/rpc-query-payloads@npm:^0.0.21":
+  version: 0.0.21
+  resolution: "@monstrs/rpc-query-payloads@npm:0.0.21"
   dependencies:
-    "@monstrs/query-types": "npm:^0.0.7"
+    "@monstrs/query-types": "npm:^0.0.12"
   peerDependencies:
     "@bufbuild/protobuf": ^1
     class-validator: ^0.14
-  checksum: 10c0/1b77e54eb85405eb5fdfab14d884d72615f758abc08cc608e0c1faec9fa4882b59ea864f90831aeaf3b34fb606cad6c2af3f36a3e94279490fddebd241d8fc16
+  checksum: 10c0/ad8bc5510e1ecbfb78ac953c0bdb75f3aac147c9296dfeb8184e0f0924f7e4018266e21353c01b8c85101e109eff329137be08af9e507778bbf6a5e139fdbafb
   languageName: node
   linkType: hard
 
@@ -12326,7 +12307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reflect-metadata@npm:0.1.13, reflect-metadata@npm:^0.1.13":
+"reflect-metadata@npm:0.1.13":
   version: 0.1.13
   resolution: "reflect-metadata@npm:0.1.13"
   checksum: 10c0/728bff0b376b05639fd11ed80c648b61f7fe653c5b506d7ca118e58b6752b9b00810fe0c86227ecf02bd88da6251ab3eb19fd403aaf2e9ff5ef36a2fda643026
